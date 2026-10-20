@@ -11,7 +11,7 @@ from datetime import date
 import pandas as pd
 
 from src.categories import CATS, LeagueA
-from src.common import REPORTS, header, load_league
+from src.common import DATA, REPORTS, header, load_league
 
 
 def cat_ranks(L: LeagueA, team: str, totals: dict) -> dict:
@@ -37,12 +37,33 @@ def fmt_delta(L, team, after) -> str:
     return "; ".join(parts)
 
 
+def sync(cfg) -> None:
+    import yaml
+    from src.common import load_env
+    from src.espn_league import fetch_rosters
+    try:
+        d = fetch_rosters(cfg, load_env())
+    except Exception as e:
+        print(f"[WARN] ESPN sync failed ({e}). Using the last saved rosters.")
+        return
+    out = {"league": "league_a", "source": "ESPN", "as_of": str(date.today()), "teams": d["teams"],
+           "faab_spent": d["faab_spent"], "free_agents": [list(x) for x in d["free_agents"]]}
+    path = DATA / "league_a_rosters" / "espn_rosters.yaml"
+    path.write_text(yaml.safe_dump(out, allow_unicode=True, sort_keys=False))
+    print(f"Synced {sum(map(len, d['teams'].values()))} rostered players, {len(d['free_agents'])} free agents/waivers")
+
+
 def main():
     cfg = load_league("league_a")
+    if "--sync" in sys.argv:
+        sync(cfg)
     L = LeagueA(cfg["my_team_name"])
     P = L.players
     me = L.me
-    out = [f"# {header(cfg)}", f"_Report {date.today()} - recommend only, nothing is done without your OK._", ""]
+    out = [f"# {header(cfg)}", f"_Report {date.today()} - rosters from {L.source} - recommend only, "
+           f"nothing is done without your OK._", ""]
+    if L.unknown:
+        out += [f"Players with no stats in our data (ignored): {', '.join(L.unknown)}", ""]
 
     t, _ = L.cat_table()
     ranks = pd.DataFrame({team: cat_ranks(L, team, L.totals[team]) for team in L.totals}).T[CATS]

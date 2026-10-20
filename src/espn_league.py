@@ -50,3 +50,31 @@ def fetch_draft(cfg: dict, env: dict, timeout: float = 5) -> dict:
                    if p.get("playerId", -1) > 0)
     return {"picks": picks, "my_slot": my_slot if order_final else None, "team_names": team_names,
             "order_final": order_final, "draft_time_ms": draft_ms}
+
+
+def _get(cfg: dict, env: dict, views, headers=None, timeout: float = 30) -> dict:
+    lid = cfg.get("league_id")
+    if not lid:
+        raise RuntimeError(f"league_id not set in config/{cfg['key']}.yaml")
+    r = requests.get(URL.format(season=cfg["season"], lid=lid), params=[("view", v) for v in views],
+                     headers=headers or {}, cookies=_cookies(env), timeout=timeout)
+    if r.status_code in (401, 403):
+        raise RuntimeError(f"ESPN refused access (HTTP {r.status_code}). Cookie expired or wrong league_id.")
+    r.raise_for_status()
+    return r.json()
+
+
+def fetch_rosters(cfg: dict, env: dict) -> dict:
+    """{'teams': {team name: [player names]}, 'faab_spent': {team: n}, 'free_agents': [(name, status)]}."""
+    import json
+    data = _get(cfg, env, ["mRoster", "mTeam"])
+    teams, spent = {}, {}
+    for t in data["teams"]:
+        name = (t.get("name") or "").strip()
+        teams[name] = [e["playerPoolEntry"]["player"]["fullName"] for e in t["roster"]["entries"]]
+        spent[name] = (t.get("transactionCounter") or {}).get("acquisitionBudgetSpent", 0)
+    flt = {"players": {"filterStatus": {"value": ["FREEAGENT", "WAIVERS"]}, "limit": 400,
+                       "sortPercOwned": {"sortPriority": 1, "sortAsc": False}}}
+    fa = _get(cfg, env, ["kona_player_info"], headers={"X-Fantasy-Filter": json.dumps(flt)})
+    free = [(p["player"]["fullName"], p.get("status")) for p in fa["players"]]
+    return {"teams": teams, "faab_spent": spent, "free_agents": free}

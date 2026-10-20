@@ -1,0 +1,896 @@
+league: league_a
+source: ESPN
+as_of: '2026-10-20'
+teams:
+  MFFL:
+  - Luka Doncic
+  - Cooper Flagg
+  - Karl-Anthony Towns
+  - James Harden
+  - Anthony Davis
+  - Dyson Daniels
+  - Devin Booker
+  - Chet Holmgren
+  - Stephon Castle
+  - Andrew Wiggins
+  - Joel Embiid
+  - Ivica Zubac
+  - Julius Randle
+  Okc Champs 2027:
+  - Nikola Jokic
+  - Jalen Brunson
+  - Amen Thompson
+  - Jalen Williams
+  - Derrick White
+  - Jaylen Brown
+  - Naz Reid
+  - VJ Edgecombe
+  - Kyrie Irving
+  - Jaden McDaniels
+  - OG Anunoby
+  - Nickeil Alexander-Walker
+  - Donovan Clingan
+  Toronto Stars:
+  - Victor Wembanyama
+  - Anthony Edwards
+  - Tyrese Haliburton
+  - Jalen Duren
+  - Jamal Murray
+  - Michael Porter Jr.
+  - Kevin Durant
+  - Mikal Bridges
+  - Franz Wagner
+  - De'Aaron Fox
+  - Darius Garland
+  - Tyler Herro
+  - Nikola Vucevic
+  EE SALA CUP NAMDE:
+  - Shai Gilgeous-Alexander
+  - Scottie Barnes
+  - Donovan Mitchell
+  - Alperen Sengun
+  - Bam Adebayo
+  - Trae Young
+  - Pascal Siakam
+  - Jaren Jackson Jr.
+  - LeBron James
+  - Zion Williamson
+  - Dejounte Murray
+  - AJ Dybantsa
+  - Brandon Miller
+  Abhinav's Awesome Team:
+  - Jayson Tatum
+  - Jalen Johnson
+  - Tyrese Maxey
+  - Kawhi Leonard
+  - Stephen Curry
+  - Austin Reaves
+  - Kon Knueppel
+  - Evan Mobley
+  - Walker Kessler
+  - Caleb Wilson
+  - Damian Lillard
+  - Cameron Boozer
+  - Desmond Bane
+  Butter Chicken Bhattacharya:
+  - Giannis Antetokounmpo
+  - Cade Cunningham
+  - Deni Avdija
+  - LaMelo Ball
+  - Josh Giddey
+  - Lauri Markkanen
+  - Domantas Sabonis
+  - Trey Murphy III
+  - Paolo Banchero
+  - Keyonte George
+  - Dylan Harper
+  - Alex Sarr
+  - Dillon Brooks
+faab_spent:
+  MFFL: 0
+  Okc Champs 2027: 0
+  Toronto Stars: 0
+  EE SALA CUP NAMDE: 0
+  Abhinav's Awesome Team: 0
+  Butter Chicken Bhattacharya: 0
+free_agents:
+- - Jarrett Allen
+  - WAIVERS
+- - Ja Morant
+  - WAIVERS
+- - Rudy Gobert
+  - WAIVERS
+- - Onyeka Okongwu
+  - WAIVERS
+- - Norman Powell
+  - WAIVERS
+- - Miles Bridges
+  - WAIVERS
+- - DeMar DeRozan
+  - WAIVERS
+- - Josh Hart
+  - WAIVERS
+- - Ty Jerome
+  - WAIVERS
+- - Jalen Green
+  - WAIVERS
+- - Payton Pritchard
+  - WAIVERS
+- - CJ McCollum
+  - WAIVERS
+- - Matas Buzelis
+  - WAIVERS
+- - Paul George
+  - WAIVERS
+- - Coby White
+  - WAIVERS
+- - Ausar Thompson
+  - WAIVERS
+- - Kel'el Ware
+  - WAIVERS
+- - Immanuel Quickley
+  - WAIVERS
+- - Reed Sheppard
+  - WAIVERS
+- - Brandon Ingram
+  - WAIVERS
+- - RJ Barrett
+  - WAIVERS
+- - Brandin Podziemski
+  - WAIVERS
+- - Darryn Peterson
+  - WAIVERS
+- - Ryan Rollins
+  - WAIVERS
+- - Derik Queen
+  - WAIVERS
+- - Darius Acuff Jr.
+  - WAIVERS
+- - John Collins
+  - WAIVERS
+- - Fred VanVleet
+  - WAIVERS
+- - Kristaps Porzingis
+  - WAIVERS
+- - Kevin Porter Jr.
+  - WAIVERS
+- - Zach Edey
+  - WAIVERS
+- - Zach LaVine
+  - WAIVERS
+- - Ayo Dosunmu
+  - WAIVERS
+- - Jabari Smith Jr.
+  - WAIVERS
+- - Tobias Harris
+  - WAIVERS
+- - Myles Turner
+  - WAIVERS
+- - Keegan Murray
+  - WAIVERS
+- - Jakob Poeltl
+  - WAIVERS
+- - Nic Claxton
+  - WAIVERS
+- - Jeremiah Fears
+  - WAIVERS
+- - Egor Demin
+  - WAIVERS
+- - Jaime Jaquez Jr.
+  - WAIVERS
+- - Andrew Nembhard
+  - WAIVERS
+- - Yaxel Lendeborg
+  - WAIVERS
+- - Peyton Watson
+  - WAIVERS
+- - Cedric Coward
+  - WAIVERS
+- - Aaron Gordon
+  - WAIVERS
+- - Quentin Grimes
+  - WAIVERS
+- - Collin Gillespie
+  - WAIVERS
+- - Isaiah Hartenstein
+  - WAIVERS
+- - Ace Bailey
+  - WAIVERS
+- - Jimmy Butler III
+  - WAIVERS
+- - Kyshawn George
+  - WAIVERS
+- - Devin Vassell
+  - WAIVERS
+- - Collin Sexton
+  - WAIVERS
+- - Neemias Queta
+  - WAIVERS
+- - Draymond Green
+  - WAIVERS
+- - Daniel Gafford
+  - WAIVERS
+- - Jrue Holiday
+  - WAIVERS
+- - Julian Champagnie
+  - WAIVERS
+- - Jalen Suggs
+  - WAIVERS
+- - Mitchell Robinson
+  - WAIVERS
+- - Jonathan Kuminga
+  - WAIVERS
+- - Anthony Black
+  - WAIVERS
+- - Cason Wallace
+  - WAIVERS
+- - Oso Ighodaro
+  - WAIVERS
+- - Rui Hachimura
+  - WAIVERS
+- - Toumani Camara
+  - WAIVERS
+- - Saddiq Bey
+  - WAIVERS
+- - Scotty Pippen Jr.
+  - WAIVERS
+- - Malik Monk
+  - WAIVERS
+- - Day'Ron Sharpe
+  - WAIVERS
+- - Bennedict Mathurin
+  - WAIVERS
+- - Collin Murray-Boyles
+  - WAIVERS
+- - Jerami Grant
+  - WAIVERS
+- - Jordan Poole
+  - WAIVERS
+- - Davion Mitchell
+  - WAIVERS
+- - Deandre Ayton
+  - WAIVERS
+- - Brook Lopez
+  - WAIVERS
+- - Christian Braun
+  - WAIVERS
+- - Anfernee Simons
+  - WAIVERS
+- - Keldon Johnson
+  - WAIVERS
+- - Bobby Portis
+  - WAIVERS
+- - Cameron Johnson
+  - WAIVERS
+- - P.J. Washington
+  - WAIVERS
+- - Jared McCain
+  - WAIVERS
+- - Aday Mara
+  - WAIVERS
+- - Keaton Wagler
+  - WAIVERS
+- - T.J. McConnell
+  - WAIVERS
+- - Klay Thompson
+  - WAIVERS
+- - Alex Caruso
+  - WAIVERS
+- - Scoot Henderson
+  - WAIVERS
+- - Jake LaRavia
+  - WAIVERS
+- - Shaedon Sharpe
+  - WAIVERS
+- - Ajay Mitchell
+  - WAIVERS
+- - Kyle Filipowski
+  - WAIVERS
+- - Mikel Brown Jr.
+  - WAIVERS
+- - Mark Williams
+  - WAIVERS
+- - Moussa Diabate
+  - WAIVERS
+- - Santi Aldama
+  - WAIVERS
+- - Jusuf Nurkic
+  - WAIVERS
+- - Dereck Lively II
+  - WAIVERS
+- - Khaman Maluach
+  - WAIVERS
+- - Grayson Allen
+  - WAIVERS
+- - Tari Eason
+  - WAIVERS
+- - Tre Jones
+  - WAIVERS
+- - Cam Thomas
+  - WAIVERS
+- - D'Angelo Russell
+  - WAIVERS
+- - Tim Hardaway Jr.
+  - WAIVERS
+- - Wendell Carter Jr.
+  - WAIVERS
+- - Kelly Oubre Jr.
+  - WAIVERS
+- - Precious Achiuwa
+  - WAIVERS
+- - Duncan Robinson
+  - WAIVERS
+- - Morez Johnson Jr.
+  - WAIVERS
+- - Isaiah Stewart
+  - WAIVERS
+- - Isaiah Collier
+  - WAIVERS
+- - Danny Wolf
+  - WAIVERS
+- - Kyle Kuzma
+  - WAIVERS
+- - Yves Missi
+  - WAIVERS
+- - Bronny James
+  - WAIVERS
+- - Ben Simmons
+  - WAIVERS
+- - Kingston Flemings
+  - WAIVERS
+- - Aaron Nesmith
+  - WAIVERS
+- - Dennis Schroder
+  - WAIVERS
+- - Brayden Burries
+  - WAIVERS
+- - Sandro Mamukelashvili
+  - WAIVERS
+- - Zaccharie Risacher
+  - WAIVERS
+- - Naji Marshall
+  - WAIVERS
+- - De'Andre Hunter
+  - WAIVERS
+- - Jamal Shead
+  - WAIVERS
+- - Jaylon Tyson
+  - WAIVERS
+- - Bub Carrington
+  - WAIVERS
+- - Jalen Smith
+  - WAIVERS
+- - Luguentz Dort
+  - WAIVERS
+- - Bilal Coulibaly
+  - WAIVERS
+- - Russell Westbrook
+  - WAIVERS
+- - Isaiah Jackson
+  - WAIVERS
+- - Donte DiVincenzo
+  - WAIVERS
+- - Max Christie
+  - WAIVERS
+- - Robert Williams III
+  - WAIVERS
+- - Sam Hauser
+  - WAIVERS
+- - GG Jackson
+  - WAIVERS
+- - Herbert Jones
+  - WAIVERS
+- - Royce O'Neale
+  - WAIVERS
+- - Gui Santos
+  - WAIVERS
+- - Walter Clayton Jr.
+  - WAIVERS
+- - Obi Toppin
+  - WAIVERS
+- - Andre Drummond
+  - WAIVERS
+- - Brice Sensabaugh
+  - WAIVERS
+- - Bradley Beal
+  - WAIVERS
+- - Cam Spencer
+  - WAIVERS
+- - Tre Johnson
+  - WAIVERS
+- - Ryan Kalkbrenner
+  - WAIVERS
+- - Gradey Dick
+  - WAIVERS
+- - Chris Paul
+  - WAIVERS
+- - De'Anthony Melton
+  - WAIVERS
+- - Kevin Huerter
+  - WAIVERS
+- - Nikola Jovic
+  - WAIVERS
+- - Jaylin Williams
+  - WAIVERS
+- - Isaiah Joe
+  - WAIVERS
+- - Al Horford
+  - WAIVERS
+- - Maxime Raynaud
+  - WAIVERS
+- - Jose Alvarado
+  - WAIVERS
+- - Marcus Smart
+  - WAIVERS
+- - Hugo Gonzalez
+  - WAIVERS
+- - Aaron Wiggins
+  - WAIVERS
+- - Paul Reed
+  - WAIVERS
+- - Nique Clifford
+  - WAIVERS
+- - Labaron Philon Jr.
+  - WAIVERS
+- - Pelle Larsson
+  - WAIVERS
+- - Hannes Steinbach
+  - WAIVERS
+- - Carter Bryant
+  - WAIVERS
+- - Miles McBride
+  - WAIVERS
+- - Baylor Scheierman
+  - WAIVERS
+- - Luke Kennard
+  - WAIVERS
+- - Bones Hyland
+  - WAIVERS
+- - Derrick Jones Jr.
+  - WAIVERS
+- - Jaylen Wells
+  - WAIVERS
+- - Kris Dunn
+  - WAIVERS
+- - Luke Kornet
+  - WAIVERS
+- - Max Strus
+  - WAIVERS
+- - Leonard Miller
+  - WAIVERS
+- - Meleek Thomas
+  - WAIVERS
+- - Jordan Walsh
+  - WAIVERS
+- - Nolan Traore
+  - WAIVERS
+- - Cameron Carr
+  - WAIVERS
+- - Kentavious Caldwell-Pope
+  - WAIVERS
+- - Tristan da Silva
+  - WAIVERS
+- - Marvin Bagley III
+  - WAIVERS
+- - Tacko Fall
+  - WAIVERS
+- - Cam Whitmore
+  - WAIVERS
+- - Harrison Barnes
+  - WAIVERS
+- - Kasparas Jakucionis
+  - WAIVERS
+- - Keon Ellis
+  - WAIVERS
+- - Joan Beringer
+  - WAIVERS
+- - AJ Green
+  - WAIVERS
+- - Buddy Hield
+  - WAIVERS
+- - Nate Ament
+  - WAIVERS
+- - Ronald Holland II
+  - WAIVERS
+- - Vit Krejci
+  - WAIVERS
+- - Jordan Clarkson
+  - WAIVERS
+- - Landry Shamet
+  - WAIVERS
+- - Lonzo Ball
+  - WAIVERS
+- - Ebuka Okorie
+  - WAIVERS
+- - Sam Merrill
+  - WAIVERS
+- - Khris Middleton
+  - WAIVERS
+- - Ryan Dunn
+  - WAIVERS
+- - Ja'Kobe Walter
+  - WAIVERS
+- - Ziaire Williams
+  - WAIVERS
+- - Jarace Walker
+  - WAIVERS
+- - Matisse Thybulle
+  - WAIVERS
+- - Jay Huff
+  - WAIVERS
+- - Yang Hansen
+  - WAIVERS
+- - Dean Wade
+  - WAIVERS
+- - Adem Bona
+  - WAIVERS
+- - Terrence Shannon Jr.
+  - WAIVERS
+- - Sergio de Larrea
+  - WAIVERS
+- - Rob Dillingham
+  - WAIVERS
+- - Steven Adams
+  - WAIVERS
+- - Clint Capela
+  - WAIVERS
+- - Caris LeVert
+  - WAIVERS
+- - Tyus Jones
+  - WAIVERS
+- - Seth Curry
+  - WAIVERS
+- - Bennett Stirtz
+  - WAIVERS
+- - Jeremy Sochan
+  - WAIVERS
+- - Jayden Quaintance
+  - WAIVERS
+- - Bogdan Bogdanovic
+  - WAIVERS
+- - Jaxson Hayes
+  - WAIVERS
+- - Trevon Brazile
+  - WAIVERS
+- - Yanic Konan Niederhauser
+  - WAIVERS
+- - Moses Moody
+  - WAIVERS
+- - Noah Clowney
+  - WAIVERS
+- - Koa Peat
+  - WAIVERS
+- - Tarris Reed Jr.
+  - WAIVERS
+- - Terance Mann
+  - WAIVERS
+- - Daniss Jenkins
+  - WAIVERS
+- - Brandon Williams
+  - WAIVERS
+- - Mike Conley
+  - WAIVERS
+- - Chris Cenac Jr.
+  - WAIVERS
+- - Gary Payton II
+  - WAIVERS
+- - Thanasis Antetokounmpo
+  - WAIVERS
+- - Dalton Knecht
+  - WAIVERS
+- - Trayce Jackson-Davis
+  - WAIVERS
+- - Allen Graves
+  - WAIVERS
+- - Isaiah Evans
+  - WAIVERS
+- - Cody Williams
+  - WAIVERS
+- - Christian Anderson
+  - WAIVERS
+- - Dailyn Swain
+  - WAIVERS
+- - Moritz Wagner
+  - WAIVERS
+- - Ryan Conwell
+  - WAIVERS
+- - Kevon Looney
+  - WAIVERS
+- - Gary Trent Jr.
+  - WAIVERS
+- - Goga Bitadze
+  - WAIVERS
+- - Karim Lopez
+  - WAIVERS
+- - Will Riley
+  - WAIVERS
+- - Kyle Anderson
+  - WAIVERS
+- - Tyler Kolek
+  - WAIVERS
+- - Corey Kispert
+  - WAIVERS
+- - Patrick Williams
+  - WAIVERS
+- - Bol Bol
+  - WAIVERS
+- - Dominick Barlow
+  - WAIVERS
+- - Asa Newell
+  - WAIVERS
+- - Luka Garza
+  - WAIVERS
+- - Mohamed Diawara
+  - WAIVERS
+- - Simone Fontecchio
+  - WAIVERS
+- - Jaden Ivey
+  - WAIVERS
+- - Mo Bamba
+  - WAIVERS
+- - Jarred Vanderbilt
+  - WAIVERS
+- - Olivier-Maxence Prosper
+  - WAIVERS
+- - Jonas Valanciunas
+  - WAIVERS
+- - Zuby Ejiofor
+  - WAIVERS
+- - Noa Essengue
+  - WAIVERS
+- - Jaylen Clark
+  - WAIVERS
+- - Yuki Kawamura
+  - WAIVERS
+- - Grant Williams
+  - WAIVERS
+- - Isaac Okoro
+  - WAIVERS
+- - Dylan Cardwell
+  - WAIVERS
+- - Kobe Brown
+  - WAIVERS
+- - Larry Nance Jr.
+  - WAIVERS
+- - Trey Lyles
+  - WAIVERS
+- - Charles Bassey
+  - WAIVERS
+- - Nikola Topic
+  - WAIVERS
+- - James Wiseman
+  - WAIVERS
+- - Tre Mann
+  - WAIVERS
+- - Justin Champagnie
+  - WAIVERS
+- - Johnny Furphy
+  - WAIVERS
+- - Julian Strawther
+  - WAIVERS
+- - Thomas Bryant
+  - WAIVERS
+- - Ousmane Dieng
+  - WAIVERS
+- - Jock Landale
+  - WAIVERS
+- - Liam McNeeley
+  - WAIVERS
+- - Kenrich Williams
+  - WAIVERS
+- - Bruce Brown
+  - WAIVERS
+- - Jamal Cain
+  - WAIVERS
+- - Leaky Black
+  - WAIVERS
+- - Caleb Love
+  - WAIVERS
+- - Ben Sheppard
+  - WAIVERS
+- - Pacome Dadiet
+  - WAIVERS
+- - Jalen Wilson
+  - WAIVERS
+- - Nick Richards
+  - WAIVERS
+- - Jordan Goodwin
+  - WAIVERS
+- - Spencer Dinwiddie
+  - WAIVERS
+- - Tristan Vukcevic
+  - WAIVERS
+- - Justin Edwards
+  - WAIVERS
+- - Thomas Sorber
+  - WAIVERS
+- - Chris Youngblood
+  - WAIVERS
+- - Vince Williams Jr.
+  - WAIVERS
+- - Braden Smith
+  - WAIVERS
+- - Mouhamed Gueye
+  - WAIVERS
+- - Jase Richardson
+  - WAIVERS
+- - Taurean Prince
+  - WAIVERS
+- - Kyle Lowry
+  - WAIVERS
+- - Kevin Love
+  - WAIVERS
+- - Chris Boucher
+  - WAIVERS
+- - Jericho Sims
+  - WAIVERS
+- - Jaden Hardy
+  - WAIVERS
+- - Joshua Jefferson
+  - WAIVERS
+- - Caleb Martin
+  - WAIVERS
+- - Alex Antetokounmpo
+  - WAIVERS
+- - Kris Murray
+  - WAIVERS
+- - Baba Miller
+  - WAIVERS
+- - Georges Niang
+  - WAIVERS
+- - Taylor Hendricks
+  - WAIVERS
+- - Cole Anthony
+  - WAIVERS
+- - Zach Collins
+  - WAIVERS
+- - Gabe Vincent
+  - WAIVERS
+- - Alex Karaban
+  - WAIVERS
+- - Rayan Rupert
+  - WAIVERS
+- - Jonathan Mogbo
+  - WAIVERS
+- - Bruce Thornton
+  - WAIVERS
+- - Will Richard
+  - WAIVERS
+- - Rocco Zikarsky
+  - WAIVERS
+- - Josh Green
+  - WAIVERS
+- - Jalen Pickett
+  - WAIVERS
+- - Jordan McLaughlin
+  - WAIVERS
+- - Jalen McDaniels
+  - WAIVERS
+- - Ben Saraf
+  - WAIVERS
+- - Ryan Nembhard
+  - WAIVERS
+- - Guerschon Yabusele
+  - WAIVERS
+- - Dorian Finney-Smith
+  - WAIVERS
+- - Paul Zipser
+  - WAIVERS
+- - Marcus Sasser
+  - WAIVERS
+- - Ron Harper Jr.
+  - WAIVERS
+- - Jonathan Isaac
+  - WAIVERS
+- - Jabari Walker
+  - WAIVERS
+- - Pat Spencer
+  - WAIVERS
+- - Killian Hayes
+  - WAIVERS
+- - Wang Zhelin
+  - WAIVERS
+- - Johni Broome
+  - WAIVERS
+- - Koby Brea
+  - WAIVERS
+- - Jordan Miller
+  - WAIVERS
+- - Tyrese Proctor
+  - WAIVERS
+- - Julian Reese
+  - WAIVERS
+- - Jordan Hawkins
+  - WAIVERS
+- - Ja'Kobi Gillespie
+  - WAIVERS
+- - Kobe Sanders
+  - WAIVERS
+- - Sion James
+  - WAIVERS
+- - Sharife Cooper
+  - WAIVERS
+- - Otega Oweh
+  - WAIVERS
+- - Sidy Cissoko
+  - WAIVERS
+- - Malcolm Brogdon
+  - WAIVERS
+- - Ochai Agbaji
+  - WAIVERS
+- - Jevon Carter
+  - WAIVERS
+- - Omer Yurtseven
+  - WAIVERS
+- - Rasheer Fleming
+  - WAIVERS
+- - Terry Rozier
+  - WAIVERS
+- - Joe Ingles
+  - WAIVERS
+- - Joe Young
+  - WAIVERS
+- - Craig Porter Jr.
+  - WAIVERS
+- - Alex Kirk
+  - WAIVERS
+- - Jae'Sean Tate
+  - WAIVERS
+- - Quenton Jackson
+  - WAIVERS
+- - Kelly Olynyk
+  - WAIVERS
+- - Quinten Post
+  - WAIVERS
+- - Devin Carter
+  - WAIVERS
+- - Maliq Brown
+  - WAIVERS
+- - Javon Small
+  - WAIVERS
+- - Rade Zagorac
+  - WAIVERS
+- - Richie Saunders
+  - WAIVERS
+- - Drake Powell
+  - WAIVERS
+- - Julian Phillips
+  - WAIVERS
+- - Henri Veesaar
+  - WAIVERS
+- - Adou Thiero
+  - WAIVERS
+- - Jett Howard
+  - WAIVERS
+- - Jaylen Nowell
+  - WAIVERS
+- - Patric Young
+  - WAIVERS
+- - Ariel Hukporti
+  - WAIVERS
+- - Tidjane Salaun
+  - WAIVERS
+- - Boo Buie
+  - WAIVERS
+- - Jahmir Young
+  - WAIVERS
+- - Gary Harris
+  - WAIVERS
+- - Moses Wright
+  - WAIVERS
+- - Dru Smith
+  - WAIVERS
+- - Zhou Qi
+  - WAIVERS
+- - Nigel Hayes-Davis
+  - WAIVERS
+- - Pat Connaughton
+  - WAIVERS
+- - Dwight Powell
+  - WAIVERS
+- - Mac McClung
+  - WAIVERS
+- - Udonis Haslem
+  - WAIVERS
+- - McKinley Wright IV
+  - WAIVERS

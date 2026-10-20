@@ -31,10 +31,15 @@ def load_players() -> pd.DataFrame:
     return df
 
 
-def load_rosters() -> dict[str, list[str]]:
-    r = yaml.safe_load(open(DATA / "league_a_rosters" / "rosters.yaml"))
-    assert r["league"] == "league_a"
-    return r["teams"]
+def load_rosters() -> dict:
+    """Prefer the ESPN sync (espn_rosters.yaml, written by `league_a.py --sync`), else the screenshot file."""
+    for fn in ("espn_rosters.yaml", "rosters.yaml"):
+        path = DATA / "league_a_rosters" / fn
+        if path.exists():
+            r = yaml.safe_load(open(path))
+            assert r["league"] == "league_a"
+            return r
+    raise FileNotFoundError("no League A rosters")
 
 
 def add_zscores(df: pd.DataFrame, pool_size: int = 78) -> pd.DataFrame:
@@ -85,10 +90,18 @@ class LeagueA:
     def __init__(self, my_team: str = "Okc Champs 2027"):
         self.players = add_zscores(load_players())
         self.by_norm = {norm_name(n): i for i, n in self.players.name.items()}
-        self.rosters = {t: [self.by_norm[norm_name(p)] for p in names] for t, names in load_rosters().items()}
-        self.me = my_team
+        src = load_rosters()
+        self.source = f"{src.get('source', 'screenshot')} ({src.get('as_of')})"
+        self.unknown = [p for names in src["teams"].values() for p in names if norm_name(p) not in self.by_norm]
+        self.rosters = {t: [self.by_norm[norm_name(p)] for p in names if norm_name(p) in self.by_norm]
+                        for t, names in src["teams"].items()}
+        self.me = next(t for t in self.rosters if norm_name(t) == norm_name(my_team))
         rostered = {i for ids in self.rosters.values() for i in ids}
-        self.fa = self.players[~self.players.index.isin(rostered)]
+        if src.get("free_agents"):  # ESPN's own list of who can be added
+            ok = {self.by_norm[norm_name(n)] for n, _ in src["free_agents"] if norm_name(n) in self.by_norm}
+            self.fa = self.players[self.players.index.isin(ok - rostered)]
+        else:
+            self.fa = self.players[~self.players.index.isin(rostered)]
         self.vec = pd.DataFrame(contrib(self.players), index=self.players.index)
         self.team_vec = {t: self.vec.loc[ids].to_numpy().sum(axis=0) for t, ids in self.rosters.items()}
         self.totals = {t: totals_from_vec(v) for t, v in self.team_vec.items()}
