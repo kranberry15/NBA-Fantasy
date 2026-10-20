@@ -53,8 +53,52 @@ def sync(cfg) -> None:
     print(f"Synced {sum(map(len, d['teams'].values()))} rostered players, {len(d['free_agents'])} free agents/waivers")
 
 
+def evaluate(cfg, opp_name: str, give: list[str], get: list[str]) -> None:
+    """Score one trade: python league_a.py --eval "Toronto" "Jalen Williams,Jaylen Brown" "Kevin Durant,Mikal Bridges" """
+    from src.common import norm_name
+    L = LeagueA(cfg["my_team_name"])
+    P = L.players
+    opp = next(t for t in L.rosters if norm_name(opp_name) in norm_name(t))
+
+    def ids(names, team):
+        out = []
+        for n in names:
+            m = [i for i in L.rosters[team] if norm_name(n) in norm_name(P.at[i, "name"])]
+            if not m:
+                raise SystemExit(f"'{n}' is not on {team}'s roster")
+            out.append(m[0])
+        return out
+    g, q = ids(give, L.me), ids(get, opp)
+    extra = len(g) - len(q)
+    if extra > 0:  # open roster spots get filled from free agents
+        fill = list(L.fa.sort_values("z_total", ascending=False).index[:extra])
+        print(f"(open spot(s) filled with free agent: {', '.join(P.at[i, 'name'] for i in fill)})")
+        q_me = q + fill
+    else:
+        q_me = q
+    before = {t: L.score(L.totals[t], t) / 5 for t in L.totals}
+    T = dict(L.totals)
+    T[L.me], T[opp] = L.with_swap(L.me, g, q_me), L.with_swap(opp, q, g)
+    old, L.totals = L.totals, T
+    after = {t: L.score(T[t], t) / 5 for t in T}
+    L.totals = old
+    print(header(cfg))
+    print(f"GIVE {', '.join(P.at[i, 'name'] for i in g)}  |  GET {', '.join(P.at[i, 'name'] for i in q)}  ({opp})")
+    print(f"You:  {before[L.me]:.2f} -> {after[L.me]:.2f} cat-wins/wk ({after[L.me] - before[L.me]:+.2f})")
+    print(f"Them: {before[opp]:.2f} -> {after[opp]:.2f} ({after[opp] - before[opp]:+.2f})")
+    order = sorted(after, key=lambda t: -after[t])
+    print("New order: " + " > ".join(f"{t} {after[t]:.2f}" for t in order))
+    print("Your categories: " + fmt_delta(L, L.me, T[L.me]))
+    verdict = "ACCEPT" if after[L.me] - before[L.me] > 0.15 else "DECLINE (gain too small or negative)"
+    print(f"Verdict: {verdict}")
+
+
 def main():
     cfg = load_league("league_a")
+    if "--eval" in sys.argv:
+        i = sys.argv.index("--eval")
+        opp, give, get = sys.argv[i + 1:i + 4]
+        return evaluate(cfg, opp, [x.strip() for x in give.split(",")], [x.strip() for x in get.split(",")])
     if "--sync" in sys.argv:
         sync(cfg)
     L = LeagueA(cfg["my_team_name"])
