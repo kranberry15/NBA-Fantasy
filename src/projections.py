@@ -291,8 +291,10 @@ def add_vorp_and_tiers(df: pd.DataFrame, cfg: dict) -> pd.DataFrame:
     df["vorp"] = df.apply(vorp, axis=1).round(1)
     df = df.sort_values("vorp", ascending=False).reset_index(drop=True)
     df["rank"] = np.arange(1, len(df) + 1)
-    df["adp_rank"] = df.adp.rank(method="min")
-    df["edge"] = (df.adp_rank - df["rank"]).where(df.adp.notna())  # + = we like him more than ESPN drafters
+    # ESPN gives ~140 to players nobody drafts; treat those as "undrafted" (no edge number)
+    drafted = df.adp < 135
+    df["adp_rank"] = df.adp.where(drafted).rank(method="min")
+    df["edge"] = (df.adp_rank - df["rank"]).where(drafted)  # + = we like him more than ESPN drafters
 
     # tiers: break where the VORP gap is unusually large (top 200 only)
     v = df.vorp.values

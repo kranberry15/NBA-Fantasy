@@ -246,7 +246,9 @@ class Draft:
             strengths.append(f"TOs cost {r.tov_cost_pg:.1f}/g")
         if strengths:
             bits.append(", ".join(strengths))
-        if not math.isnan(r.adp):
+        if not math.isnan(r.adp) and r.adp >= 135:
+            bits.append("undrafted in most ESPN leagues (sleeper)")
+        elif not math.isnan(r.adp):
             e = r.edge
             tag = f"ADP {r.adp:.0f}" + (f" (we rank him {e:+.0f} spots higher)" if e and e >= 5 else
                                         f" (market overrates by {-e:.0f})" if e and e <= -5 else "")
