@@ -154,7 +154,10 @@ class LeagueA:
         return df
 
     # ------------------------------------------------------------ trades
-    def trades(self, team: str, n: int = 10, max_size: int = 2) -> pd.DataFrame:
+    def trades(self, team: str, n: int = 10, max_size: int = 2, mode: str = "win-win") -> pd.DataFrame:
+        """mode='win-win': both sides gain on our numbers.
+        mode='edge': we gain, they lose (or barely gain) on our numbers, but they receive the bigger
+        names by ESPN ADP so it looks like a win to them and fair to veto voters."""
         my_base = self.score(self.totals[team], team)
         rows = []
         my_ids = self.rosters[team]
@@ -176,12 +179,14 @@ class LeagueA:
                         if self.perceived(give) < self.perceived(get) - 8:
                             continue
                         theirs = self.score(self.with_swap(opp, get, give), opp)
-                        if theirs - opp_base <= 0.0:
+                        if mode == "win-win" and theirs - opp_base <= 0.0:
+                            continue
+                        if mode == "edge" and (theirs - opp_base > 0.3 or self.perceived(give) < self.perceived(get)):
                             continue
                         rows.append({"opp": opp, "give": give, "get": get, "my_gain": mine - my_base,
                                      "their_gain": theirs - opp_base, "z_give": zg, "z_get": zr})
         df = pd.DataFrame(rows)
         if df.empty:
             return df
-        df["rank_score"] = df.my_gain + 0.5 * df.their_gain
+        df["rank_score"] = df.my_gain + (0.5 * df.their_gain if mode == "win-win" else -0.5 * df.their_gain)
         return df.sort_values("rank_score", ascending=False).head(n)
