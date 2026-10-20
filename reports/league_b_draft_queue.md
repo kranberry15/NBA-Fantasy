@@ -72,3 +72,48 @@ so the queue does not waste an early pick on someone you can get later. Tested i
 | 63 | Alex Sarr | WAS | PF/C | 39.5 | 57 | 88 |  |
 | 64 | DeMar DeRozan | DEN | SF/PF | 30.5 | 74 | 99 |  |
 | 65 | Jaden McDaniels | MIN | SF/PF | 31.1 | 72 | 97 |  |
+| 66 | Brandin Podziemski | GSW | PG/SG | 31.7 | 71 | 92 | DAY_TO_DAY |
+| 67 | Ausar Thompson | DET | SF/PF | 33.6 | 67 | 101 |  |
+| 68 | Caleb Wilson | CHI | SF | 34.0 | 66 | 72 |  |
+| 69 | OG Anunoby | NYK | SF/PF | 33.9 | 66 | 84 |  |
+| 70 | Jaren Jackson Jr. | UTA | PF/C | 37.6 | 59 | 85 |  |
+| 71 | Nikola Vucevic | ORL | C | 35.6 | 67 | 117 |  |
+| 72 | Jayson Tatum | BOS | SF/PF | 47.9 | 45 | 9 |  |
+| 73 | Jeremiah Fears | NOP | PG/SG | 30.1 | 75 | 122 |  |
+| 74 | Immanuel Quickley | TOR | PG/SG | 35.1 | 61 | 106 |  |
+| 75 | Jabari Smith Jr. | HOU | PF/C | 32.9 | 69 | 121 |  |
+| 76 | Jaime Jaquez Jr. | MIL | SG/SF | 30.1 | 70 | 125 |  |
+| 77 | Keyonte George | UTA | PG/SG | 34.1 | 61 | 73 |  |
+| 78 | Myles Turner | MIL | C | 29.9 | 70 | 127 |  |
+| 79 | Ryan Rollins | MIL | PG/SG | 33.6 | 62 | 108 |  |
+| 80 | Darius Garland | LAC | PG | 36.2 | 57 | 49 |  |
+| 81 | Dylan Harper | SAS | PG/SG | 30.8 | 67 | 80 |  |
+| 82 | Isaiah Hartenstein | OKC | C | 38.7 | 56 | 131 |  |
+| 83 | Andrew Wiggins | MIA | SF/PF | 31.5 | 66 | 115 |  |
+| 84 | Joel Embiid | PHI | C | 50.0 | 41 | 67 |  |
+| 85 | Neemias Queta | BOS | C | 32.8 | 65 | 135 |  |
+| 86 | Jalen Williams | OKC | SF/PF | 39.5 | 52 | 37 |  |
+| 87 | Ace Bailey | UTA | SF/PF | 29.5 | 69 | 131 |  |
+| 88 | Jakob Poeltl | TOR | C | 37.6 | 53 | 129 |  |
+| 89 | Daniel Gafford | DAL | C | 33.6 | 59 | 137 |  |
+| 90 | RJ Barrett | TOR | SG/SF | 34.0 | 59 | 111 |  |
+| 91 | CJ McCollum | ATL | PG/SG | 29.2 | 68 | 97 |  |
+| 92 | Andrew Nembhard | IND | PG/SG | 32.1 | 61 | 131 |  |
+| 93 | Reed Sheppard | HOU | PG/SG | 27.8 | 70 | 105 |  |
+| 94 | Lauri Markkanen | UTA | SF/PF | 39.0 | 50 | 52 |  |
+| 95 | Kyle Filipowski | UTA | PF/C | 31.2 | 70 | 141 | DAY_TO_DAY |
+| 96 | Saddiq Bey | NOP | SF/PF | 32.1 | 60 | 139 |  |
+| 97 | Toumani Camara | POR | SF/PF | 28.1 | 75 | 140 |  |
+| 98 | John Collins | DET | PF/C | 31.3 | 62 | 113 |  |
+| 99 | Keldon Johnson | SAS | SF/PF | 25.8 | 75 | 140 |  |
+| 100 | Ayo Dosunmu | MIN | PG/SG | 30.2 | 64 | 115 |  |
+| 101 | Tyler Herro | MIL | PG/SG | 37.7 | 51 | 64 |  |
+| 102 | Tre Jones | CHI | PG | 32.8 | 62 | 141 |  |
+| 103 | Nic Claxton | CHI | C | 36.0 | 53 | 128 | OUT |
+| 104 | Stephen Curry | GSW | PG | 35.0 | 55 | 32 | DAY_TO_DAY |
+| 105 | Precious Achiuwa | SAC | PF/C | 29.7 | 67 | 141 |  |
+| 106 | Brandon Miller | CHA | SG/SF | 33.2 | 58 | 64 |  |
+| 107 | Trae Young | WAS | PG | 43.4 | 44 | 23 |  |
+| 108 | AJ Dybantsa | WAS | SF | 29.6 | 64 | 80 | DAY_TO_DAY |
+| 109 | Bobby Portis | MIA | PF/C | 29.8 | 64 | 141 |  |
+| 110 | P.J. Washington | DAL | SF/PF | 31.6 | 60 | 140 |  |
