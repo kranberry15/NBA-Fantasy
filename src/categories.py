@@ -137,7 +137,8 @@ class LeagueA:
 
     def perceived(self, ids) -> float:
         """How the other manager likely values players: by ESPN draft position (name value)."""
-        return float(sum(max(0.0, 150 - (a if a == a else 150)) for a in self.players.loc[list(ids)].adp))
+        # convex like a trade-value chart: a top-5 pick is worth far more than two 35th picks
+        return float(sum(100 * math.exp(-(a if a == a else 150) / 40) for a in self.players.loc[list(ids)].adp))
 
     # ------------------------------------------------------------ waivers
     def fa_moves(self, team: str, n: int = 10, cats=CATS) -> pd.DataFrame:
