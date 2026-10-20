@@ -1,0 +1,9 @@
+pandas>=2.0
+numpy
+PyYAML
+requests
+rich
+lxml
+espn-api
+nba_api
+pytest

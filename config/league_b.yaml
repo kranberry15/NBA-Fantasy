@@ -1,0 +1,72 @@
+# League B -- "Ball Don't Lie" -- H2H POINTS. Never mix with league_a.yaml.
+key: league_b
+league_name: "Ball Don't Lie"
+league_id: null            # ESPN league id (number in the league URL ?leagueId=...). Needed only for draft sync.
+season: 2027               # ESPN season id for 2026-27
+my_team_name: "Okc champs 2027"
+format: points
+teams: 10
+other_teams: ["Better Call Gasol", "G-Dawgs", "Court Kings", "Lavar's Plan", "Gentle Giants",
+              "The Mid Level Exceptions", "Daniel's Daring Team", "Puttur Bone Setters", "Mamba Flurry"]
+regular_season_weeks: 19
+playoff_teams: 4
+
+draft:
+  type: snake
+  rounds: 13
+  seconds_per_pick: 90
+  my_pick: null            # 1-10. Set 1 hour before the draft (or type `slot N` in the draft tool).
+
+roster:
+  size: 13
+  starters: [PG, SG, SF, PF, C, G, F, UTIL, UTIL, UTIL]
+  bench: 3
+  ir: 1
+  max_centers: 3
+
+waivers:
+  type: rolling            # not FAAB; 1-day waiver, order moves to last after claim, never resets
+  waiver_days: 1
+  max_acquisitions_per_week: 7
+  undroppable_list: true
+
+trades:
+  deadline: 2027-02-20
+  review_days: 1
+  veto_votes: 4
+
+# Exact scoring weights (ESPN stat names). Do not change unless the league changes.
+scoring:
+  FGM: 2
+  FGA: -1
+  FTM: 1
+  FTA: -1
+  FTMI: -1
+  3PM: 1
+  3PMI: -1
+  OREB: 1
+  REB: 1.5
+  AST: 2.5
+  STL: 4
+  BLK: 4
+  TO: -2
+  TF: -1
+  PTS: 1
+  DD: 4
+  TD: 7.5
+  QD: 10
+
+projection:
+  season_weights: {2026: 0.60, 2025: 0.28, 2024: 0.12}   # 2025-26 season counts most
+  team_games: 82
+  games_regression_seasons: 1.0   # pull games-played rate toward league norm by this many seasons
+  injury_out_games_default: 15    # games removed if ESPN lists player OUT and no override below
+  injury_dtd_games_default: 2
+
+# Manual corrections you trust more than the model. Names must match ESPN spelling.
+overrides:
+  games_missed: {}       # e.g. {"Tyrese Haliburton": 0, "Some Player": 30}
+  minutes: {}            # projected MPG, e.g. {"Some Player": 32}
+  suspended: {}          # e.g. {"Some Player": 10}  (games)
+
+auto_mode: false          # recommend only. Never acts without approval.

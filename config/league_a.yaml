@@ -1,0 +1,39 @@
+# League A -- "BLR Dreaming FNBA" -- H2H 9-CAT. Never mix with league_b.yaml.
+key: league_a
+league_name: "BLR Dreaming FNBA"
+league_id: null
+season: 2027
+my_team_name: "Okc Champs 2027"
+format: categories
+teams: 6
+other_teams: ["MFFL", "Toronto Stars", "EE SALA CUP NAMDE", "Abhinav's Awesome Team", "Butter Chicken Bhattacharya"]
+regular_season_weeks: 20
+playoff_teams: 4
+categories: [FG%, FT%, 3PM, REB, AST, STL, BLK, TO, PTS]
+negative_categories: [TO]
+category_tiebreaker: none
+
+roster:
+  size: 13
+  starters: [PG, SG, SF, PF, C, G, F, UTIL, UTIL, UTIL]
+  bench: 3
+  ir: 2
+  max_centers: null
+
+waivers:
+  type: faab
+  budget: 200
+  min_bid: 1
+  process: "Sunday 06:00 ET"
+  tiebreak: inverse_standings_weekly_reset
+
+trades:
+  deadline: 2027-04-06
+  review_days: 1
+  veto_votes: 4
+
+my_roster: ["Derrick White", "VJ Edgecombe", "Jaylen Brown", "OG Anunoby", "Nikola Jokic",
+            "Jalen Brunson", "Jalen Williams", "Amen Thompson", "Naz Reid", "Nickeil Alexander-Walker",
+            "Kyrie Irving", "Jaden McDaniels", "Donovan Clingan"]
+
+auto_mode: false
