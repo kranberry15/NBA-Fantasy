@@ -46,8 +46,11 @@ def fetch_draft(cfg: dict, env: dict, timeout: float = 5) -> dict:
     team_names = {i + 1: teams.get(tid, f"team {tid}") for i, tid in enumerate(order)}
     mine = norm_name(cfg["my_team_name"])
     my_slot = next((s for s, n in team_names.items() if norm_name(n) == mine), None)
-    picks = sorted((p["overallPickNumber"], p["playerId"]) for p in data.get("draftDetail", {}).get("picks", [])
-                   if p.get("playerId", -1) > 0)
+    dd = data.get("draftDetail", {})
+    picks = sorted((p["overallPickNumber"], p["playerId"]) for p in dd.get("picks", []) if p.get("playerId", -1) > 0)
+    if dd.get("inProgress") and not picks and dd.get("picks"):
+        # ESPN hides player ids (-1) from the API while a draft is live; they appear once it ends
+        raise RuntimeError("ESPN hides picks while the draft is live. Type picks by hand; `s` works after the draft.")
     return {"picks": picks, "my_slot": my_slot if order_final else None, "team_names": team_names,
             "order_final": order_final, "draft_time_ms": draft_ms}
 
