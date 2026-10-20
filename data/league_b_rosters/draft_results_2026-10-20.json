@@ -739,6 +739,48 @@
    "slot": 3,
    "id": 4431736,
    "name": "Toumani Camara"
+  },
+  {
+   "n": 124,
+   "slot": 4,
+   "id": 4433249,
+   "name": "Moussa Diabate"
+  },
+  {
+   "n": 125,
+   "slot": 5,
+   "id": 4278053,
+   "name": "Davion Mitchell"
+  },
+  {
+   "n": 126,
+   "slot": 6,
+   "id": 4432165,
+   "name": "Jalen Suggs"
+  },
+  {
+   "n": 127,
+   "slot": 7,
+   "id": 4873138,
+   "name": "Ace Bailey"
+  },
+  {
+   "n": 128,
+   "slot": 8,
+   "id": 4395712,
+   "name": "Andrew Nembhard"
+  },
+  {
+   "n": 129,
+   "slot": 9,
+   "id": 5175737,
+   "name": "Yaxel Lendeborg"
+  },
+  {
+   "n": 130,
+   "slot": 10,
+   "id": 4711272,
+   "name": "Reed Sheppard"
   }
  ],
  "team_names": {}
