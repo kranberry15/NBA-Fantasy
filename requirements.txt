@@ -7,3 +7,4 @@ lxml
 espn-api
 nba_api
 pytest
+tabulate

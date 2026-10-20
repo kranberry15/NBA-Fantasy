@@ -263,7 +263,7 @@ def build_values(cfg: dict, current: list[dict], logs: pd.DataFrame, ages: dict[
             "bonus_pg": round(bonus_pg, 2), "dd_pg": round(bonus["DD"], 3), "td_pg": round(bonus["TD"], 3),
             "fppg": round(fppg, 2), "fp_total": round(fppg * g_proj, 1),
             "last_fppg": round(last_fppg, 2) if not np.isnan(last_fppg) else np.nan, "last_gp": last_gp,
-            **{f"{c.lower()}_pg": round(rates[c] * mpg, 2) for c in ("PTS", "REB", "AST", "STL", "BLK", "TO", "3PM")},
+            **{f"{c.lower()}_pg": round(rates[c] * mpg, 2) for c in ("PTS", "REB", "AST", "STL", "BLK", "TO", "3PM", "FGM", "FGA", "FTM", "FTA")},
             "fg_pct": round(rates["FGM"] / rates["FGA"], 3) if rates["FGA"] else np.nan,
             "ft_pct": round(rates["FTM"] / rates["FTA"], 3) if rates["FTA"] else np.nan,
             "tov_cost_pg": round(rates["TO"] * mpg * 2, 2),
