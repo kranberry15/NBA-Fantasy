@@ -1,7 +1,7 @@
 # League B -- "Ball Don't Lie" -- H2H POINTS. Never mix with league_a.yaml.
 key: league_b
 league_name: "Ball Don't Lie"
-league_id: null            # ESPN league id (number in the league URL ?leagueId=...). Needed only for draft sync.
+league_id: 1129175968      # ESPN league id (number in the league URL ?leagueId=...). Needed only for draft sync.
 season: 2027               # ESPN season id for 2026-27
 my_team_name: "Okc champs 2027"
 format: points
