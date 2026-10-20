@@ -180,6 +180,10 @@ def do_sync(d: Draft):
     except Exception as e:
         con.print(f"[red]ESPN sync failed: {e}[/red]\nKeep typing picks by hand.")
         return
+    if not info.get("order_final"):
+        con.print("[yellow]ESPN has not set the draft order yet (it does so 1 hour before the draft). "
+                  "Run `s` again after that.[/yellow]")
+        return
     if info.get("my_slot"):
         d.my_slot = info["my_slot"]
     d.team_names = info.get("team_names", {})
