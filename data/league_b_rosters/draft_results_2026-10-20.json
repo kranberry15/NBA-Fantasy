@@ -1,0 +1,745 @@
+{
+ "league": "league_b",
+ "my_slot": 3,
+ "picks": [
+  {
+   "n": 1,
+   "slot": 1,
+   "id": 3112335,
+   "name": "Nikola Jokic"
+  },
+  {
+   "n": 2,
+   "slot": 2,
+   "id": 3945274,
+   "name": "Luka Doncic"
+  },
+  {
+   "n": 3,
+   "slot": 3,
+   "id": 4278073,
+   "name": "Shai Gilgeous-Alexander"
+  },
+  {
+   "n": 4,
+   "slot": 4,
+   "id": 5104157,
+   "name": "Victor Wembanyama"
+  },
+  {
+   "n": 5,
+   "slot": 5,
+   "id": 3032977,
+   "name": "Giannis Antetokounmpo"
+  },
+  {
+   "n": 6,
+   "slot": 6,
+   "id": 4701230,
+   "name": "Jalen Johnson"
+  },
+  {
+   "n": 7,
+   "slot": 7,
+   "id": 4594268,
+   "name": "Anthony Edwards"
+  },
+  {
+   "n": 8,
+   "slot": 8,
+   "id": 4432166,
+   "name": "Cade Cunningham"
+  },
+  {
+   "n": 9,
+   "slot": 9,
+   "id": 4065648,
+   "name": "Jayson Tatum"
+  },
+  {
+   "n": 10,
+   "slot": 10,
+   "id": 5041939,
+   "name": "Cooper Flagg"
+  },
+  {
+   "n": 11,
+   "slot": 10,
+   "id": 4871144,
+   "name": "Alperen Sengun"
+  },
+  {
+   "n": 12,
+   "slot": 9,
+   "id": 3934672,
+   "name": "Jalen Brunson"
+  },
+  {
+   "n": 13,
+   "slot": 8,
+   "id": 4431678,
+   "name": "Tyrese Maxey"
+  },
+  {
+   "n": 14,
+   "slot": 7,
+   "id": 4684740,
+   "name": "Amen Thompson"
+  },
+  {
+   "n": 15,
+   "slot": 6,
+   "id": 4432573,
+   "name": "Paolo Banchero"
+  },
+  {
+   "n": 16,
+   "slot": 5,
+   "id": 4396993,
+   "name": "Tyrese Haliburton"
+  },
+  {
+   "n": 17,
+   "slot": 4,
+   "id": 3155942,
+   "name": "Domantas Sabonis"
+  },
+  {
+   "n": 18,
+   "slot": 3,
+   "id": 4433134,
+   "name": "Scottie Barnes"
+  },
+  {
+   "n": 19,
+   "slot": 2,
+   "id": 3908809,
+   "name": "Donovan Mitchell"
+  },
+  {
+   "n": 20,
+   "slot": 1,
+   "id": 4432816,
+   "name": "LaMelo Ball"
+  },
+  {
+   "n": 21,
+   "slot": 1,
+   "id": 3136195,
+   "name": "Karl-Anthony Towns"
+  },
+  {
+   "n": 22,
+   "slot": 2,
+   "id": 3149673,
+   "name": "Pascal Siakam"
+  },
+  {
+   "n": 23,
+   "slot": 3,
+   "id": 4433621,
+   "name": "Jalen Duren"
+  },
+  {
+   "n": 24,
+   "slot": 4,
+   "id": 3202,
+   "name": "Kevin Durant"
+  },
+  {
+   "n": 25,
+   "slot": 5,
+   "id": 4066261,
+   "name": "Bam Adebayo"
+  },
+  {
+   "n": 26,
+   "slot": 6,
+   "id": 4871145,
+   "name": "Josh Giddey"
+  },
+  {
+   "n": 27,
+   "slot": 7,
+   "id": 1966,
+   "name": "LeBron James"
+  },
+  {
+   "n": 28,
+   "slot": 8,
+   "id": 3136193,
+   "name": "Devin Booker"
+  },
+  {
+   "n": 29,
+   "slot": 9,
+   "id": 3992,
+   "name": "James Harden"
+  },
+  {
+   "n": 30,
+   "slot": 10,
+   "id": 4277905,
+   "name": "Trae Young"
+  },
+  {
+   "n": 31,
+   "slot": 10,
+   "id": 4683021,
+   "name": "Deni Avdija"
+  },
+  {
+   "n": 32,
+   "slot": 9,
+   "id": 4432158,
+   "name": "Evan Mobley"
+  },
+  {
+   "n": 33,
+   "slot": 8,
+   "id": 4593803,
+   "name": "Jalen Williams"
+  },
+  {
+   "n": 34,
+   "slot": 7,
+   "id": 4066336,
+   "name": "Lauri Markkanen"
+  },
+  {
+   "n": 35,
+   "slot": 6,
+   "id": 4433136,
+   "name": "Walker Kessler"
+  },
+  {
+   "n": 36,
+   "slot": 5,
+   "id": 6450,
+   "name": "Kawhi Leonard"
+  },
+  {
+   "n": 37,
+   "slot": 4,
+   "id": 4869342,
+   "name": "Dyson Daniels"
+  },
+  {
+   "n": 38,
+   "slot": 3,
+   "id": 3936299,
+   "name": "Jamal Murray"
+  },
+  {
+   "n": 39,
+   "slot": 2,
+   "id": 6583,
+   "name": "Anthony Davis"
+  },
+  {
+   "n": 40,
+   "slot": 1,
+   "id": 4066457,
+   "name": "Austin Reaves"
+  },
+  {
+   "n": 41,
+   "slot": 1,
+   "id": 3975,
+   "name": "Stephen Curry"
+  },
+  {
+   "n": 42,
+   "slot": 2,
+   "id": 3078576,
+   "name": "Derrick White"
+  },
+  {
+   "n": 43,
+   "slot": 3,
+   "id": 3917376,
+   "name": "Jaylen Brown"
+  },
+  {
+   "n": 44,
+   "slot": 4,
+   "id": 4396907,
+   "name": "Darius Garland"
+  },
+  {
+   "n": 45,
+   "slot": 5,
+   "id": 5037871,
+   "name": "Dylan Harper"
+  },
+  {
+   "n": 46,
+   "slot": 6,
+   "id": 3064514,
+   "name": "Julius Randle"
+  },
+  {
+   "n": 47,
+   "slot": 7,
+   "id": 4433255,
+   "name": "Chet Holmgren"
+  },
+  {
+   "n": 48,
+   "slot": 8,
+   "id": 5160992,
+   "name": "Alex Sarr"
+  },
+  {
+   "n": 49,
+   "slot": 9,
+   "id": 4017837,
+   "name": "Ivica Zubac"
+  },
+  {
+   "n": 50,
+   "slot": 10,
+   "id": 4845367,
+   "name": "Stephon Castle"
+  },
+  {
+   "n": 51,
+   "slot": 10,
+   "id": 4431680,
+   "name": "Onyeka Okongwu"
+  },
+  {
+   "n": 52,
+   "slot": 9,
+   "id": 5124612,
+   "name": "VJ Edgecombe"
+  },
+  {
+   "n": 53,
+   "slot": 8,
+   "id": 4395628,
+   "name": "Zion Williamson"
+  },
+  {
+   "n": 54,
+   "slot": 7,
+   "id": 4066259,
+   "name": "De'Aaron Fox"
+  },
+  {
+   "n": 55,
+   "slot": 6,
+   "id": 5105623,
+   "name": "Kel'el Ware"
+  },
+  {
+   "n": 56,
+   "slot": 5,
+   "id": 5105565,
+   "name": "Donovan Clingan"
+  },
+  {
+   "n": 57,
+   "slot": 4,
+   "id": 4066320,
+   "name": "Desmond Bane"
+  },
+  {
+   "n": 58,
+   "slot": 3,
+   "id": 4066328,
+   "name": "Jarrett Allen"
+  },
+  {
+   "n": 59,
+   "slot": 2,
+   "id": 5061575,
+   "name": "Kon Knueppel"
+  },
+  {
+   "n": 60,
+   "slot": 1,
+   "id": 4278104,
+   "name": "Michael Porter Jr."
+  },
+  {
+   "n": 61,
+   "slot": 1,
+   "id": 3907497,
+   "name": "Dejounte Murray"
+  },
+  {
+   "n": 62,
+   "slot": 2,
+   "id": 4396971,
+   "name": "Naz Reid"
+  },
+  {
+   "n": 63,
+   "slot": 3,
+   "id": 3147657,
+   "name": "Mikal Bridges"
+  },
+  {
+   "n": 64,
+   "slot": 4,
+   "id": 5041935,
+   "name": "Cameron Boozer"
+  },
+  {
+   "n": 65,
+   "slot": 5,
+   "id": 4433287,
+   "name": "Brandon Miller"
+  },
+  {
+   "n": 66,
+   "slot": 6,
+   "id": 4397688,
+   "name": "Trey Murphy III"
+  },
+  {
+   "n": 67,
+   "slot": 7,
+   "id": 3032976,
+   "name": "Rudy Gobert"
+  },
+  {
+   "n": 68,
+   "slot": 8,
+   "id": 4711294,
+   "name": "Matas Buzelis"
+  },
+  {
+   "n": 69,
+   "slot": 9,
+   "id": 3059318,
+   "name": "Joel Embiid"
+  },
+  {
+   "n": 70,
+   "slot": 10,
+   "id": 4684742,
+   "name": "Ausar Thompson"
+  },
+  {
+   "n": 71,
+   "slot": 10,
+   "id": 6442,
+   "name": "Kyrie Irving"
+  },
+  {
+   "n": 72,
+   "slot": 9,
+   "id": 4869780,
+   "name": "Derik Queen"
+  },
+  {
+   "n": 73,
+   "slot": 8,
+   "id": 4277961,
+   "name": "Jaren Jackson Jr."
+  },
+  {
+   "n": 74,
+   "slot": 7,
+   "id": 5142718,
+   "name": "AJ Dybantsa"
+  },
+  {
+   "n": 75,
+   "slot": 6,
+   "id": 4591725,
+   "name": "Ryan Rollins"
+  },
+  {
+   "n": 76,
+   "slot": 5,
+   "id": 4395725,
+   "name": "Tyler Herro"
+  },
+  {
+   "n": 77,
+   "slot": 4,
+   "id": 3062679,
+   "name": "Josh Hart"
+  },
+  {
+   "n": 78,
+   "slot": 3,
+   "id": 4066354,
+   "name": "Payton Pritchard"
+  },
+  {
+   "n": 79,
+   "slot": 2,
+   "id": 3978,
+   "name": "DeMar DeRozan"
+  },
+  {
+   "n": 80,
+   "slot": 1,
+   "id": 5095151,
+   "name": "Caleb Wilson"
+  },
+  {
+   "n": 81,
+   "slot": 1,
+   "id": 4278039,
+   "name": "Nickeil Alexander-Walker"
+  },
+  {
+   "n": 82,
+   "slot": 2,
+   "id": 6478,
+   "name": "Nikola Vucevic"
+  },
+  {
+   "n": 83,
+   "slot": 3,
+   "id": 4066383,
+   "name": "Miles Bridges"
+  },
+  {
+   "n": 84,
+   "slot": 4,
+   "id": 4709138,
+   "name": "Brandin Podziemski"
+  },
+  {
+   "n": 85,
+   "slot": 5,
+   "id": 4251,
+   "name": "Paul George"
+  },
+  {
+   "n": 86,
+   "slot": 6,
+   "id": 4433627,
+   "name": "Keyonte George"
+  },
+  {
+   "n": 87,
+   "slot": 7,
+   "id": 4437244,
+   "name": "Jalen Green"
+  },
+  {
+   "n": 88,
+   "slot": 8,
+   "id": 2991230,
+   "name": "Fred VanVleet"
+  },
+  {
+   "n": 89,
+   "slot": 9,
+   "id": 3908845,
+   "name": "John Collins"
+  },
+  {
+   "n": 90,
+   "slot": 10,
+   "id": 4566434,
+   "name": "Franz Wagner"
+  },
+  {
+   "n": 91,
+   "slot": 10,
+   "id": 6606,
+   "name": "Damian Lillard"
+  },
+  {
+   "n": 92,
+   "slot": 9,
+   "id": 3064290,
+   "name": "Aaron Gordon"
+  },
+  {
+   "n": 93,
+   "slot": 8,
+   "id": 4431671,
+   "name": "Jaden McDaniels"
+  },
+  {
+   "n": 94,
+   "slot": 7,
+   "id": 4395724,
+   "name": "Immanuel Quickley"
+  },
+  {
+   "n": 95,
+   "slot": 6,
+   "id": 4903027,
+   "name": "Cedric Coward"
+  },
+  {
+   "n": 96,
+   "slot": 5,
+   "id": 3934719,
+   "name": "OG Anunoby"
+  },
+  {
+   "n": 97,
+   "slot": 4,
+   "id": 4222252,
+   "name": "Isaiah Hartenstein"
+  },
+  {
+   "n": 98,
+   "slot": 3,
+   "id": 4432639,
+   "name": "Jabari Smith Jr."
+  },
+  {
+   "n": 99,
+   "slot": 2,
+   "id": 3064440,
+   "name": "Zach LaVine"
+  },
+  {
+   "n": 100,
+   "slot": 1,
+   "id": 4279888,
+   "name": "Ja Morant"
+  },
+  {
+   "n": 101,
+   "slot": 1,
+   "id": 4065733,
+   "name": "Ty Jerome"
+  },
+  {
+   "n": 102,
+   "slot": 2,
+   "id": 2595516,
+   "name": "Norman Powell"
+  },
+  {
+   "n": 103,
+   "slot": 3,
+   "id": 5144091,
+   "name": "Jeremiah Fears"
+  },
+  {
+   "n": 104,
+   "slot": 4,
+   "id": 4576087,
+   "name": "Peyton Watson"
+  },
+  {
+   "n": 105,
+   "slot": 5,
+   "id": 5041955,
+   "name": "Darryn Peterson"
+  },
+  {
+   "n": 106,
+   "slot": 6,
+   "id": 3134908,
+   "name": "Jakob Poeltl"
+  },
+  {
+   "n": 107,
+   "slot": 7,
+   "id": 4432848,
+   "name": "Jaime Jaquez Jr."
+  },
+  {
+   "n": 108,
+   "slot": 8,
+   "id": 4397424,
+   "name": "Neemias Queta"
+  },
+  {
+   "n": 109,
+   "slot": 9,
+   "id": 3059319,
+   "name": "Andrew Wiggins"
+  },
+  {
+   "n": 110,
+   "slot": 10,
+   "id": 3133628,
+   "name": "Myles Turner"
+  },
+  {
+   "n": 111,
+   "slot": 10,
+   "id": 4395651,
+   "name": "Coby White"
+  },
+  {
+   "n": 112,
+   "slot": 9,
+   "id": 2490149,
+   "name": "CJ McCollum"
+  },
+  {
+   "n": 113,
+   "slot": 8,
+   "id": 6589,
+   "name": "Draymond Green"
+  },
+  {
+   "n": 114,
+   "slot": 7,
+   "id": 4277847,
+   "name": "Wendell Carter Jr."
+  },
+  {
+   "n": 115,
+   "slot": 6,
+   "id": 5142620,
+   "name": "Darius Acuff Jr."
+  },
+  {
+   "n": 116,
+   "slot": 5,
+   "id": 4592479,
+   "name": "Julian Champagnie"
+  },
+  {
+   "n": 117,
+   "slot": 4,
+   "id": 4397002,
+   "name": "Ayo Dosunmu"
+  },
+  {
+   "n": 118,
+   "slot": 3,
+   "id": 4278129,
+   "name": "Deandre Ayton"
+  },
+  {
+   "n": 119,
+   "slot": 2,
+   "id": 4683692,
+   "name": "Cason Wallace"
+  },
+  {
+   "n": 120,
+   "slot": 1,
+   "id": 4395625,
+   "name": "RJ Barrett"
+  },
+  {
+   "n": 121,
+   "slot": 1,
+   "id": 4594327,
+   "name": "Keegan Murray"
+  },
+  {
+   "n": 122,
+   "slot": 2,
+   "id": 4433192,
+   "name": "Tari Eason"
+  },
+  {
+   "n": 123,
+   "slot": 3,
+   "id": 4431736,
+   "name": "Toumani Camara"
+  }
+ ],
+ "team_names": {}
+}
