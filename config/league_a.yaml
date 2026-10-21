@@ -24,7 +24,7 @@ waivers:
   type: faab
   budget: 200
   min_bid: 1
-  process: "Sunday 06:00 ET"
+  process: "Sunday 09:00 ET (06:00 PT, 21:00 HKT)"   # from ESPN settings; 48h min on waivers
   tiebreak: inverse_standings_weekly_reset
 
 trades:
