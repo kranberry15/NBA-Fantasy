@@ -21,7 +21,9 @@ from .common import DATA, DEFAULT_POS, PRO_TEAM, PROCESSED, SLOT_POS, norm_name
 # ESPN stat id -> our name
 STAT_IDS = {"0": "PTS", "1": "BLK", "2": "STL", "3": "AST", "4": "OREB", "6": "REB", "10": "TF",
             "11": "TO", "13": "FGM", "14": "FGA", "15": "FTM", "16": "FTA", "17": "3PM", "18": "3PA",
-            "24": "FTMI", "25": "3PMI", "37": "DD", "38": "TD", "39": "QD", "40": "MIN"}
+            "24": "FTMI", "25": "3PMI", "37": "DD", "38": "TD", "39": "QD", "40": "MIN",
+            # game context (not scored): fouls, ejections, flagrants, fouled out, started
+            "9": "PF", "7": "EJ", "8": "FF", "12": "DQ", "41": "GS"}
 RATE_STATS = ["PTS", "FGM", "FGA", "FTM", "FTA", "FTMI", "3PM", "3PMI", "OREB", "REB", "AST",
               "STL", "BLK", "TO", "TF"]
 BONUS_STATS = ["DD", "TD", "QD"]
