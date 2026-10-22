@@ -96,7 +96,14 @@ def build_values(cfg: dict, current: list[dict], logs: pd.DataFrame, ages: dict[
     ov_min = {norm_name(k): v for k, v in (ov.get("minutes") or {}).items()}
     ov_susp = {norm_name(k): v for k, v in (ov.get("suspended") or {}).items()}
 
-    logs = logs[logs["season"].isin(sw)].copy()
+    # The season in progress joins the blend. Its weight is per minute played, so 2 games barely move a
+    # projection while 30 games dominate it. Games-played history still uses completed seasons only.
+    cur = int(cfg["season"])
+    if (logs["season"] == cur).any():
+        sw_rates = {**sw, cur: float(pcfg.get("current_season_weight", 1.0))}
+    else:
+        sw_rates = dict(sw)
+    logs = logs[logs["season"].isin(sw_rates)].copy()
     logs["FP"] = fantasy_points(logs, W)
 
     # season aggregates
@@ -147,14 +154,26 @@ def build_values(cfg: dict, current: list[dict], logs: pd.DataFrame, ages: dict[
         hist = by_player.get(pid)
         if hist is not None and hist.MIN.sum() > 0:
             source = "logs"
-            seasons = [s for s in sw if s in hist.index]
-            wsum = sum(sw[s] for s in seasons)
-            wt = {s: sw[s] / wsum for s in seasons}
+            seasons = [s for s in sw_rates if s in hist.index]
+            wsum = sum(sw_rates[s] for s in seasons)
+            wt = {s: sw_rates[s] / wsum for s in seasons}
             M = hist.MIN.sum()
+            # rookies (only this season's games): shrink toward ESPN's stat line, not a bench player
+            p_prior, k_min = prior, K_MINUTES
+            if seasons == [cur]:
+                esp = next((x.get("averageStats") for x in p.get("stats", []) if x.get("statSourceId") == 1
+                            and x.get("seasonId") == cur and x.get("averageStats")), None)
+                esp_min = float(esp.get("40", esp.get("28", 0))) if esp else 0
+                if esp_min > 0:
+                    p_prior = {c: float(esp.get(sid, 0.0)) / esp_min for sid, c in STAT_IDS.items() if c in RATE_STATS}
+                    p_prior["OREB"] = p_prior.get("OREB") or 0.25 * p_prior.get("REB", 0)
+                    p_prior["TF"] = p_prior.get("TF") or prior["TF"]
+                    p_prior = {c: v * (0.9 if W[c] > 0 else 1.0) for c, v in p_prior.items()}  # same -10% as preseason
+                    k_min = 600
             rates = {}
             for c in RATE_STATS:
                 obs = sum(wt[s] * hist.at[s, c] for s in seasons) / sum(wt[s] * hist.at[s, "MIN"] for s in seasons)
-                rates[c] = (obs * M + prior[c] * K_MINUTES) / (M + K_MINUTES)
+                rates[c] = (obs * M + p_prior.get(c, prior[c]) * k_min) / (M + k_min)
             gp_w = sum(wt[s] * hist.at[s, "GP"] for s in seasons)
             mpg_hist = sum(wt[s] * hist.at[s, "MIN"] for s in seasons) / gp_w
             G = hist.GP.sum()
@@ -163,6 +182,10 @@ def build_values(cfg: dict, current: list[dict], logs: pd.DataFrame, ages: dict[
                 obs = sum(wt[s] * hist.at[s, c] for s in seasons) / gp_w
                 bonus[c] = obs * G / (G + K_GAMES_BONUS)
             rmpg = recent.rec_mpg.get(pid, mpg_hist)
+            if seasons == [cur] and k_min == 600:  # rookie: minutes also shrink toward ESPN's line (10 games)
+                g_now = hist.at[cur, "GP"]
+                mpg_hist = (hist.at[cur, "MIN"] + esp_min * 10) / (g_now + 10)
+                rmpg = mpg_hist
             mpg = 0.75 * mpg_hist + 0.25 * rmpg
             if abs(rmpg - mpg_hist) >= 4:
                 flags.append("MIN↑" if rmpg > mpg_hist else "MIN↓")
@@ -194,6 +217,8 @@ def build_values(cfg: dict, current: list[dict], logs: pd.DataFrame, ages: dict[
             if p.get("proTeamId", 0) and lt and lt != p.get("proTeamId"):
                 flags.append("NEW-TEAM")
                 notes.append(f"was {PRO_TEAM.get(lt, '?')}")
+            cur_gp = int(hist.at[cur, "GP"]) if cur in hist.index else 0
+            cur_fppg = (hist.at[cur, "FP"] / cur_gp) if cur_gp else np.nan
             last_fppg = (hist.at[last_season, "FP"] / hist.at[last_season, "GP"]) if last_season in hist.index else np.nan
             last_gp = int(hist.at[last_season, "GP"]) if last_season in hist.index else 0
         else:
@@ -217,6 +242,7 @@ def build_values(cfg: dict, current: list[dict], logs: pd.DataFrame, ages: dict[
             bonus = {"DD": dd, "TD": 0.0, "QD": 0.0}
             mpg_hist = mpg
             g_proj = min(float(proj.get("42", 66) or 66), 66)
+            cur_gp, cur_fppg = 0, np.nan
             # ESPN rookie lines tend to run hot; shade 10% until real games exist
             rates = {c: v * (0.9 if W[c] > 0 else 1.0) for c, v in rates.items()}
             notes.append("rookie positives shaded -10%")
@@ -263,6 +289,7 @@ def build_values(cfg: dict, current: list[dict], logs: pd.DataFrame, ages: dict[
             "bonus_pg": round(bonus_pg, 2), "dd_pg": round(bonus["DD"], 3), "td_pg": round(bonus["TD"], 3),
             "fppg": round(fppg, 2), "fp_total": round(fppg * g_proj, 1),
             "last_fppg": round(last_fppg, 2) if not np.isnan(last_fppg) else np.nan, "last_gp": last_gp,
+            "cur_gp": cur_gp, "cur_fppg": round(cur_fppg, 2) if not np.isnan(cur_fppg) else np.nan,
             **{f"{c.lower()}_pg": round(rates[c] * mpg, 2) for c in ("PTS", "REB", "AST", "STL", "BLK", "TO", "3PM", "FGM", "FGA", "FTM", "FTA")},
             "fg_pct": round(rates["FGM"] / rates["FGA"], 3) if rates["FGA"] else np.nan,
             "ft_pct": round(rates["FTM"] / rates["FTA"], 3) if rates["FTA"] else np.nan,

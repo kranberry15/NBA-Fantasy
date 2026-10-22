@@ -15,7 +15,7 @@ import sys
 import requests
 
 from src.common import header, load_env, load_league
-from src.espn_league import URL, _cookies
+from src.espn_league import URL, _cookies, all_transactions
 
 HK = dt.timezone(dt.timedelta(hours=8))
 SKIP = {"DRAFT", "ROSTER", "FUTURE_ROSTER"}
@@ -25,15 +25,9 @@ def activity(key: str) -> None:
     cfg = load_league(key)
     url = URL.format(season=cfg["season"], lid=cfg["league_id"])
     ck = _cookies(load_env())
-    # pending trade offers only come back when mPendingTransactions is requested on its own
-    d = requests.get(url, params=[("view", "mTransactions2"), ("view", "mTeam")], cookies=ck, timeout=30).json()
-    pend = requests.get(url, params={"view": "mPendingTransactions"}, cookies=ck, timeout=30).json()
+    d, tx = all_transactions(cfg, load_env())
     teams = {t["id"]: t["name"].strip() for t in d["teams"]}
-    seen, tx = set(), []
-    for x in d.get("transactions", []) + pend.get("pendingTransactions", []):
-        if x["type"] not in SKIP and x["id"] not in seen:
-            seen.add(x["id"])
-            tx.append(x)
+    tx = [x for x in tx if x["type"] not in SKIP]
     ids = list({i["playerId"] for x in tx for i in x.get("items", [])})
     names = {}
     if ids:
@@ -48,7 +42,7 @@ def activity(key: str) -> None:
         when = dt.datetime.fromtimestamp(x["proposedDate"] / 1000, HK).strftime("%a %d %b %H:%M HKT")
         bid = f" ${x['bidAmount']}" if x.get("bidAmount") else ""
         items = ", ".join(f"{i['type']} {names.get(i['playerId'], i['playerId'])}" for i in x.get("items", []))
-        print(f"  {when} | {teams.get(x.get('teamId'), '-'):<28} | {x['type']} {x['status']}{bid} | {items}")
+        print(f"  {when} | {teams.get(x.get('teamId'), '-'):<28} | {x['type']} {x.get('status', '')}{bid} | {items}")
     print()
 
 

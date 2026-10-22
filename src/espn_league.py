@@ -81,3 +81,25 @@ def fetch_rosters(cfg: dict, env: dict) -> dict:
     fa = _get(cfg, env, ["kona_player_info"], headers={"X-Fantasy-Filter": json.dumps(flt)})
     free = [(p["player"]["fullName"], p.get("status")) for p in fa["players"]]
     return {"teams": teams, "faab_spent": spent, "free_agents": free}
+
+
+def all_transactions(cfg: dict, env: dict) -> tuple[dict, list[dict]]:
+    """(league json with teams, every transaction this season incl. pending). ESPN returns only one
+    scoring period per request, so ask for each day so far."""
+    url = URL.format(season=cfg["season"], lid=cfg["league_id"])
+    ck = _cookies(env)
+    base = requests.get(url, params=[("view", "mTeam"), ("view", "mStatus")], cookies=ck, timeout=30).json()
+    latest = (base.get("status") or {}).get("latestScoringPeriod") or base.get("scoringPeriodId") or 1
+    by_id: dict[str, dict] = {}
+    for sp in range(1, latest + 1):          # later days overwrite earlier copies of the same record
+        d = requests.get(url, params=[("view", "mTransactions2"), ("scoringPeriodId", sp)], cookies=ck, timeout=30).json()
+        for x in d.get("transactions", []):
+            by_id[x["id"]] = x
+    pend = requests.get(url, params={"view": "mPendingTransactions"}, cookies=ck, timeout=30).json()
+    live = {x["id"] for x in pend.get("pendingTransactions", [])}
+    for x in pend.get("pendingTransactions", []):
+        by_id[x["id"]] = x
+    for x in by_id.values():                 # a "pending" offer that is no longer pending has ended
+        if x.get("status") == "PENDING" and x["id"] not in live:
+            x["status"] = "ENDED"
+    return base, list(by_id.values())

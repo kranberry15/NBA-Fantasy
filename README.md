@@ -35,6 +35,7 @@ browser ends it.
 | `python3 refresh.py [--force]` | Pull ESPN player data (cached 12 h; past seasons 30 days) and rebuild `data/processed/league_b_board.csv` |
 | `python3 draft.py` | League B live draft board (used on draft night; `h` for help) |
 | `python3 mock_draft.py --slot N` | Practice draft against ADP bots |
+| `python3 performance.py` | Scorecard vs reality: model accuracy (ours vs ESPN vs last season), hot/cold with sample-size check, minutes changes, every move judged on actual production since it happened |
 | `python3 activity.py` | All moves in both leagues incl. cancelled claims (ESPN hides other teams' pending claims) |
 | `python3 league_a.py --sync` | Pull League A rosters + free-agent/waiver list from ESPN, then write `reports/league_a_<date>.md` |
 | `python3 league_a.py` | League A report from the last sync: category ranks, per-player z-scores, waiver adds, trade ideas |
@@ -49,6 +50,10 @@ for rookies with no NBA games (shaded −10%, flagged `ROOKIE/NO-DATA`).
   baseline when the sample is small.
 * **Minutes**: season blend 75% + last 20 games 25%, with an age adjustment.
 * **Age**: young players +1–4% per minute; 31+ decline gently.
+* **This season's games** join the blend weighted per minute played (`current_season_weight`), so two games
+  barely move a projection and thirty dominate it. Rookies shrink toward ESPN's line (600 min, 10 games for minutes).
+* **Judged against reality**: the preseason board is frozen in `data/processed/history/` and
+  `performance.py` grades it (and ESPN's projection) on actual results.
 * **Games**: 3-season games-played history, regressed toward the league norm, minus current injury
   (OUT = −15 games unless overridden in config) and suspensions.
 
@@ -110,7 +115,7 @@ Works:
 Not yet / known limits:
 * **No scheduled refresh** yet (`refresh.py` runs by hand). Planned: daily, plus Sunday before League A waivers.
 * `refresh.py` does not re-download the pro schedule; it was fetched once into `data/raw/pro_schedule_2027.json`.
-* No rolling 7/14/30-day form or changelog yet.
+* No rolling 7/14/30-day form or changelog yet (performance.py covers actual-vs-projected so far).
 * League B trade search and waiver advice are run ad hoc, not from a command.
 * Games projection is too harsh on players coming back from one long injury (e.g. Tatum projects 45 G).
 * Rosters in `league_a.yaml` / `league_b` draft file are draft-day snapshots; use `--sync` for current rosters.

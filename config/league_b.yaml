@@ -57,7 +57,8 @@ scoring:
   QD: 10
 
 projection:
-  season_weights: {2026: 0.60, 2025: 0.28, 2024: 0.12}   # 2025-26 season counts most
+  season_weights: {2026: 0.60, 2025: 0.28, 2024: 0.12}   # completed seasons; 2025-26 counts most
+  current_season_weight: 1.0      # 2026-27 games, weighted per minute played (grows as the season goes on)
   team_games: 82
   games_regression_seasons: 1.0   # pull games-played rate toward league norm by this many seasons
   injury_out_games_default: 15    # games removed if ESPN lists player OUT and no override below
