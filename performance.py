@@ -30,6 +30,37 @@ ET = dt.timezone(dt.timedelta(hours=-4))
 CATS = {"PTS": "PTS", "REB": "REB", "AST": "AST", "STL": "STL", "BLK": "BLK", "3PM": "3PM", "TO": "TO"}
 
 
+ABBR = {"NY": "NYK", "SA": "SAS", "GS": "GSW", "NO": "NOP", "UTAH": "UTA", "WSH": "WAS", "PHO": "PHX"}
+BLOWOUT = 20      # final margin at which starters sit and bench minutes balloon
+
+
+def margins(periods) -> dict[tuple[str, int], int]:
+    """(team, scoring period) -> final margin, from ESPN's public scoreboard; cached in data/raw."""
+    import json
+    cache = DATA / "raw" / "margins.json"
+    have = json.loads(cache.read_text()) if cache.exists() else {}
+    for sp in periods:
+        day = DAY1 + dt.timedelta(days=int(sp) - 1)
+        if str(sp) in have or day >= date.today():
+            continue
+        try:
+            r = requests.get("https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard",
+                             params={"dates": day.strftime("%Y%m%d")}, timeout=20).json()
+        except Exception as e:
+            print(f"[WARN] scoreboard {day} failed: {e}")
+            continue
+        games = {}
+        for ev in r.get("events", []):
+            if ev["status"]["type"].get("completed"):
+                c = ev["competitions"][0]["competitors"]
+                m = abs(int(c[0]["score"]) - int(c[1]["score"]))
+                for x in c:
+                    games[ABBR.get(x["team"]["abbreviation"], x["team"]["abbreviation"])] = m
+        have[str(sp)] = games
+    cache.write_text(json.dumps(have))
+    return {(t, int(sp)): m for sp, g in have.items() for t, m in g.items()}
+
+
 def load():
     W = load_league("league_b")["scoring"]
     pre = pd.read_csv(PROCESSED / "history" / "league_b_board_preseason.csv").set_index("id")
@@ -37,14 +68,21 @@ def load():
     with sqlite3.connect(DATA / "cache.sqlite") as con:
         logs = pd.read_sql("select * from game_logs", con)
     logs["FP"] = fantasy_points(logs, W)
-    cur = logs[logs.season == SEASON]
+    cur = logs[logs.season == SEASON].copy()
+    from src.common import PRO_TEAM
+    mg = margins(sorted(cur.period.unique()))
+    cur["margin"] = [mg.get((PRO_TEAM.get(int(t), "?"), int(p))) for t, p in zip(cur.team_id, cur.period)]
+    cur["blowout"] = cur.margin.fillna(0) >= BLOWOUT
     last = logs[logs.season == SEASON - 1]
     sd = last.groupby("player_id").FP.std()            # each player's game-to-game swing, last season
     return pre, now, cur, sd
 
 
 def player_table(pre, cur, sd) -> pd.DataFrame:
-    g = cur.groupby("player_id").agg(gp=("FP", "size"), fp=("FP", "sum"), mins=("MIN", "sum"))
+    g = cur.groupby("player_id").agg(gp=("FP", "size"), fp=("FP", "sum"), mins=("MIN", "sum"),
+                                     blow=("blowout", "sum"))
+    close = cur[~cur.blowout].groupby("player_id").MIN.mean().rename("close_mpg")
+    g = g.join(close)
     t = g.join(pre[["name", "team", "fppg", "espn_fppg_pre", "last_fppg", "mpg"]], how="inner")
     t["act_fppg"] = t.fp / t.gp
     t["act_mpg"] = t.mins / t.gp
@@ -81,7 +119,8 @@ def scorecard(t: pd.DataFrame) -> list[str]:
 def hot_cold(t: pd.DataFrame, names: list[str], title: str) -> list[str]:
     keys = {norm_name(n) for n in names}
     x = t[t.name.map(norm_name).isin(keys)].sort_values("diff", ascending=False)
-    out = [f"## {title}", "", "| Player | G | Actual FP/G | Projected | Diff | Verdict | MPG act/proj |", "|---|---|---|---|---|---|---|"]
+    out = [f"## {title}", "", "| Player | G (blowouts) | Actual FP/G | Projected | Diff | Verdict | MPG act/proj | MPG in close games |",
+           "|---|---|---|---|---|---|---|---|"]
     for _, r in x.iterrows():
         if r.gp >= 3 and abs(r.z) >= 2:
             verdict = "REAL change" if r["diff"] > 0 else "REAL drop"
@@ -89,8 +128,9 @@ def hot_cold(t: pd.DataFrame, names: list[str], title: str) -> list[str]:
             verdict = "watch (small sample)"
         else:
             verdict = "noise"
-        out.append(f"| {r['name']} | {r.gp} | {r.act_fppg:.1f} | {r.fppg:.1f} | {r['diff']:+.1f} | {verdict} | "
-                   f"{r.act_mpg:.0f}/{r.mpg:.0f} |")
+        close = f"{r.close_mpg:.0f}" if r.close_mpg == r.close_mpg else "-"
+        out.append(f"| {r['name']} | {r.gp} ({int(r.blow)}) | {r.act_fppg:.1f} | {r.fppg:.1f} | {r['diff']:+.1f} | {verdict} | "
+                   f"{r.act_mpg:.0f}/{r.mpg:.0f} | {close} |")
     missing = sorted(set(names) - set(x.name))
     if missing:
         out.append(f"\nNo game yet: {', '.join(missing)}")
@@ -98,13 +138,16 @@ def hot_cold(t: pd.DataFrame, names: list[str], title: str) -> list[str]:
 
 
 def minutes_watch(t: pd.DataFrame) -> list[str]:
-    x = t[(t.act_mpg - t.mpg).abs() >= 6].copy()
-    x["dm"] = x.act_mpg - x.mpg
-    x = x.sort_values("dm", ascending=False)
-    out = ["## Minutes watch (role changes; minutes settle faster than scoring)", "",
-           "| Player | Team | G | MPG actual | MPG projected | Change |", "|---|---|---|---|---|---|"]
+    """Role changes, judged on minutes in non-blowout games only (blowouts bench starters)."""
+    x = t[t.close_mpg.notna()].copy()
+    x["dm"] = x.close_mpg - x.mpg
+    x = x[x.dm.abs() >= 6].sort_values("dm", ascending=False)
+    out = ["## Minutes watch (non-blowout games only; a blowout = final margin 20+)", "",
+           "| Player | Team | G (blowouts) | MPG close games | MPG projected | Change | Trust |", "|---|---|---|---|---|---|---|"]
     for _, r in pd.concat([x.head(8), x.tail(5)]).drop_duplicates().iterrows():
-        out.append(f"| {r['name']} | {r.team} | {r.gp} | {r.act_mpg:.1f} | {r.mpg:.1f} | {r.dm:+.1f} |")
+        close_g = int(r.gp - r.blow)
+        trust = "act" if close_g >= 3 else "watch" if close_g == 2 else "1 game - wait"
+        out.append(f"| {r['name']} | {r.team} | {r.gp} ({int(r.blow)}) | {r.close_mpg:.1f} | {r.mpg:.1f} | {r.dm:+.1f} | {trust} |")
     return out + [""]
 
 
