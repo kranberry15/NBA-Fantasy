@@ -25,10 +25,15 @@ def activity(key: str) -> None:
     cfg = load_league(key)
     url = URL.format(season=cfg["season"], lid=cfg["league_id"])
     ck = _cookies(load_env())
-    d = requests.get(url, params=[("view", "mTransactions2"), ("view", "mPendingTransactions"), ("view", "mTeam")],
-                     cookies=ck, timeout=30).json()
+    # pending trade offers only come back when mPendingTransactions is requested on its own
+    d = requests.get(url, params=[("view", "mTransactions2"), ("view", "mTeam")], cookies=ck, timeout=30).json()
+    pend = requests.get(url, params={"view": "mPendingTransactions"}, cookies=ck, timeout=30).json()
     teams = {t["id"]: t["name"].strip() for t in d["teams"]}
-    tx = [x for x in d.get("transactions", []) if x["type"] not in SKIP]
+    seen, tx = set(), []
+    for x in d.get("transactions", []) + pend.get("transactions", []):
+        if x["type"] not in SKIP and x["id"] not in seen:
+            seen.add(x["id"])
+            tx.append(x)
     ids = list({i["playerId"] for x in tx for i in x.get("items", [])})
     names = {}
     if ids:
