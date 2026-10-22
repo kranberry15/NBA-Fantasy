@@ -30,7 +30,7 @@ def activity(key: str) -> None:
     pend = requests.get(url, params={"view": "mPendingTransactions"}, cookies=ck, timeout=30).json()
     teams = {t["id"]: t["name"].strip() for t in d["teams"]}
     seen, tx = set(), []
-    for x in d.get("transactions", []) + pend.get("transactions", []):
+    for x in d.get("transactions", []) + pend.get("pendingTransactions", []):
         if x["type"] not in SKIP and x["id"] not in seen:
             seen.add(x["id"])
             tx.append(x)
