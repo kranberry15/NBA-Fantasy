@@ -74,7 +74,7 @@ position (convex, star-weighted), and (3) still help me if players miss games at
 | | League A | League B |
 |---|---|---|
 | Waivers | FAAB $200, min $1, processed **Sun 09:00 ET (21:00 HKT)**; dropped players wait ≥48 h | Rolling order that **never resets**; a claim sends you last; 1-day waiver period |
-| Add limit | none | **1 add per day** (max 7 a week) |
+| Add limit | none | **7 per 7-day matchup** (scaled to matchup length; any number on one day) |
 | IR | 2 | 1 |
 | Position limit | none | **max 3 centers** (by ESPN primary position) |
 | Trade deadline / review | 6 Apr 2027 / 1 day, 4 vetoes | 20 Feb 2027 (01:00 HKT) / 1 day, 4 vetoes |

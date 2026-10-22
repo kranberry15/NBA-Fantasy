@@ -27,7 +27,7 @@ roster:
 waivers:
   type: rolling            # not FAAB; 1-day waiver, order moves to last after claim, never resets
   waiver_days: 1
-  max_acquisitions_per_week: 7
+  max_acquisitions_per_week: 7     # "7 (for 7-day matchups)" per ESPN League Info; scaled for shorter weeks
   undroppable_list: true
 
 trades:
