@@ -35,6 +35,7 @@ browser ends it.
 | `python3 refresh.py [--force]` | Pull ESPN player data (cached 12 h; past seasons 30 days) and rebuild `data/processed/league_b_board.csv` |
 | `python3 draft.py` | League B live draft board (used on draft night; `h` for help) |
 | `python3 mock_draft.py --slot N` | Practice draft against ADP bots |
+| `python3 activity.py` | All moves in both leagues incl. cancelled claims (ESPN hides other teams' pending claims) |
 | `python3 league_a.py --sync` | Pull League A rosters + free-agent/waiver list from ESPN, then write `reports/league_a_<date>.md` |
 | `python3 league_a.py` | League A report from the last sync: category ranks, per-player z-scores, waiver adds, trade ideas |
 | `python3 league_a.py --eval Toronto "Brunson,McDaniels" "Jamal Murray,Mikal Bridges"` | Score any trade or counter in about a second: new rank, category changes, ACCEPT/DECLINE |
