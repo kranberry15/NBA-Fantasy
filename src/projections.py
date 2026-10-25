@@ -18,6 +18,39 @@ import pandas as pd
 
 from .common import DATA, DEFAULT_POS, PRO_TEAM, PROCESSED, SLOT_POS, norm_name
 
+
+_NUM = {"one": 1, "two": 2, "three": 3, "four": 4, "five": 5, "six": 6, "seven": 7, "eight": 8, "ten": 10, "twelve": 12}
+
+
+def _games_from_news(text: str, default: float) -> tuple[float, str]:
+    """Games missed from ESPN injury wording; ~3.5 NBA games per week. Falls back to the config default."""
+    import re
+    w = r"(\d+|" + "|".join(_NUM) + r")"
+    m = re.search(w + r"(?:\s*(?:-to-|-|to)\s*" + w + r")?\s*(?:-|\s)?weeks?", text)
+    if m:
+        lo = _NUM.get(m.group(1), None) or int(m.group(1))
+        hi = (_NUM.get(m.group(2), None) or int(m.group(2))) if m.group(2) else lo
+        return 3.5 * (lo + hi) / 2, f"ESPN timeline {m.group(0)}"
+    m = re.search(r"(?:first|next)\s+" + w + r"(?:\s+or\s+" + w + r")?\s+games", text)
+    if m:
+        lo = _NUM.get(m.group(1), None) or int(m.group(1))
+        return float(lo), f"ESPN timeline {m.group(0)}"
+    if any(k in text for k in ("season-ending", "out for the season", "torn achilles", "acl")):
+        return default * 3, "long-term per ESPN news"
+    if "mild" in text:
+        return 4.0, "ESPN: mild"
+    if re.search(r"ruled out for \w+'s game", text) and "extended" not in text:
+        return 5.0, "ESPN: single-game ruling, no timeline"
+    return default, "no timeline in news; config default"
+
+
+def _news(pid):
+    try:
+        from .gamecontext import news
+        return news(int(pid))
+    except Exception:
+        return []
+
 # ESPN stat id -> our name
 STAT_IDS = {"0": "PTS", "1": "BLK", "2": "STL", "3": "AST", "4": "OREB", "6": "REB", "10": "TF",
             "11": "TO", "13": "FGM", "14": "FGA", "15": "FTM", "16": "FTA", "17": "3PM", "18": "3PA",
@@ -267,8 +300,17 @@ def build_values(cfg: dict, current: list[dict], logs: pd.DataFrame, ages: dict[
             miss = float(ov_games[nn])
             notes.append(f"override: misses {miss:.0f} G")
         elif inj in ("OUT", "INJURY_RESERVE"):
-            miss = float(pcfg["injury_out_games_default"])
-            notes.append(f"OUT: assumed {miss:.0f} G missed (set overrides.games_missed)")
+            # read ESPN's latest note: a rest / load-management day is not a multi-week injury
+            latest = next(iter(_news(pid)), None)
+            text = (latest["headline"] + " " + latest["story"]).lower() if latest else ""
+            if any(w in text for w in ("rest", "management", "maintenance", "load")) and not any(
+                    w in text for w in ("surgery", "fracture", "tear", "sprain", "strain", "weeks")):
+                miss = float(pcfg["injury_dtd_games_default"])
+                notes.append(f"OUT for rest/management per ESPN news ({latest['date']}): {miss:.0f} G")
+            else:
+                miss, how = _games_from_news(text, float(pcfg["injury_out_games_default"]))
+                notes.append(f"OUT: {miss:.0f} G missed ({how})"
+                             + (f"; ESPN {latest['date']}: {latest['headline'][:80]}" if latest else ""))
         elif inj == "DAY_TO_DAY":
             miss = float(pcfg["injury_dtd_games_default"])
         if nn in ov_susp:
