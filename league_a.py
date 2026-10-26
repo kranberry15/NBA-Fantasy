@@ -81,8 +81,21 @@ def evaluate(cfg, opp_name: str, give: list[str], get: list[str]) -> None:
         g_opp_drop = list(P.loc[keep].z_total.nsmallest(extra).index)
         print(f"(you add free agent {', '.join(P.at[i, 'name'] for i in q_me[len(q):])}; "
               f"{opp} must cut {', '.join(P.at[i, 'name'] for i in g_opp_drop)})")
+    g_me, g_opp = list(g), list(g)
+    if extra < 0:
+        # roster is full: I must cut the players whose loss hurts least; they fill spots with free agents
+        for _ in range(-extra):
+            keep = [i for i in L.rosters[L.me] if i not in g_me]
+            cut = max(keep, key=lambda c: L.score(L.with_swap(L.me, g_me + [c], q), L.me))
+            g_me.append(cut)
+        for _ in range(-extra):
+            best = max((f for f in L.fa.sort_values("z_total", ascending=False).index[:60] if f not in g_opp),
+                       key=lambda f: L.score(L.with_swap(opp, q, g_opp + [f]), opp))
+            g_opp.append(best)
+        print(f"(your roster is full: you must cut {', '.join(P.at[i, 'name'] for i in g_me[len(g):])}; "
+              f"{opp} adds free agent {', '.join(P.at[i, 'name'] for i in g_opp[len(g):])})")
     T = dict(L.totals)
-    T[L.me], T[opp] = L.with_swap(L.me, g, q_me), L.with_swap(opp, q + g_opp_drop, g)
+    T[L.me], T[opp] = L.with_swap(L.me, g_me, q_me), L.with_swap(opp, q + g_opp_drop, g_opp)
     before = {t: L.score(L.totals[t], t) / 5 for t in L.totals}
     old, L.totals = L.totals, T
     after = {t: L.score(T[t], t) / 5 for t in T}
