@@ -38,6 +38,11 @@ trades:
 # Exact scoring weights (ESPN stat names), checked against ESPN's live league settings
 # (python3 check_scoring.py). ESPN does NOT score missed 3s (3PMI) or missed FTs (FTMI) in this
 # league; they were in the original brief but are not in ESPN's settings (fixed 26 Oct 2026).
+# Goal set by me (26 Oct 2026): win each H2H week. Weekly advice maximises this week's points
+# (games played into open lineup slots, streaming with the 7 adds) over season totals; core players
+# above replacement level are not streamed away.
+objective: win_each_week
+
 scoring:
   FGM: 2
   FGA: -1
