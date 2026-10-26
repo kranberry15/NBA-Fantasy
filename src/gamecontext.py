@@ -139,7 +139,7 @@ def annotate(cur: pd.DataFrame, logs: pd.DataFrame, board: pd.DataFrame) -> pd.D
             if r.FGA and e.fg_pct == e.fg_pct:
                 luck += (r.FGM - e.fg_pct * r.FGA) * (2 + pts_per_make)   # FGM +2 and the points it scores
             if r.FTA and e.ft_pct == e.ft_pct:
-                luck += (r.FTM - e.ft_pct * r.FTA) * 3                    # make +1 pt +1 FTM, miss -1 FTMI
+                luck += (r.FTM - e.ft_pct * r.FTA) * 2                    # a make is +1 pt +1 FTM vs a miss
             if abs(luck) >= 8:
                 tags.append(f"shooting {'hot' if luck > 0 else 'cold'} ({luck:+.0f} FP vs his normal %)")
         tags_all.append(tags)

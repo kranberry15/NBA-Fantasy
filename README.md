@@ -36,6 +36,7 @@ browser ends it.
 | `python3 draft.py` | League B live draft board (used on draft night; `h` for help) |
 | `python3 mock_draft.py --slot N` | Practice draft against ADP bots |
 | `python3 performance.py` | Scorecard vs reality: model accuracy (ours vs ESPN vs last season); every game of my players with **measured** context (blowout, OT, fouls/fouled out, ejection, techs, back-to-back, started vs bench, teammates out, shooting luck, ESPN news); minutes watch on undistorted games; points I left on my bench; every move judged on production since it happened |
+| `python3 check_scoring.py` | Compare `league_b.yaml` scoring with ESPN's live league settings (exits 1 on any mismatch) |
 | `python3 activity.py` | All moves in both leagues incl. cancelled claims (ESPN hides other teams' pending claims) |
 | `python3 league_a.py --sync` | Pull League A rosters + free-agent/waiver list from ESPN, then write `reports/league_a_<date>.md` |
 | `python3 league_a.py` | League A report from the last sync: category ranks, per-player z-scores, waiver adds, trade ideas |
@@ -59,8 +60,10 @@ for rookies with no NBA games (shaded −10%, flagged `ROOKIE/NO-DATA`).
 
 ### League B (points)
 
-Exact league weights: FGM +2, FGA −1, FTM +1, FTA −1, FTMI −1, 3PM +1, 3PMI −1, OREB +1, REB +1.5, AST +2.5,
-STL +4, BLK +4, TO −2, TF −1, PTS +1, DD +4, TD +7.5, QD +10. (A missed free throw is −2 with these weights.)
+Exact league weights, as ESPN actually scores them: FGM +2, FGA −1, FTM +1, FTA −1, 3PM +1, OREB +1, REB +1.5,
+AST +2.5, STL +4, BLK +4, TO −2, TF −1, PTS +1, DD +4, TD +7.5, QD +10. Missed 3s and missed free throws have
+no extra penalty (FTMI / 3PMI are not in ESPN's settings; a missed FT is −1, a missed 3 is −1).
+`python3 check_scoring.py` compares the config with ESPN's live settings.
 DD/TD/QD rates are counted from game logs. Season value = FP/G × projected games; VORP = value minus the best
 player at the same position left after 130 picks.
 

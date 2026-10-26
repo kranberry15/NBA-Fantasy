@@ -23,9 +23,9 @@ def test_scoring_examples():
     assert fp(PTS=2, FGM=1, FGA=1) == 3          # made 2
     assert fp(FGA=1) == -1                       # missed 2
     assert fp(PTS=3, FGM=1, FGA=1, **{"3PM": 1}) == 5   # made 3
-    assert fp(FGA=1, **{"3PMI": 1}) == -2        # missed 3
+    assert fp(FGA=1, **{"3PMI": 1}) == -1        # missed 3 (ESPN does not score 3PMI here)
     assert fp(PTS=1, FTM=1, FTA=1) == 1          # made FT
-    assert fp(FTA=1, FTMI=1) == -2               # missed FT (FTA -1, FTMI -1)
+    assert fp(FTA=1, FTMI=1) == -1               # missed FT (FTA -1; ESPN does not score FTMI here)
     assert fp(DD=1) == 4 and fp(TD=1) == 7.5
 
 

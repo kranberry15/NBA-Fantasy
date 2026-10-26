@@ -203,7 +203,7 @@ def build_values(cfg: dict, current: list[dict], logs: pd.DataFrame, ages: dict[
                     p_prior = {c: float(esp.get(sid, 0.0)) / esp_min for sid, c in STAT_IDS.items() if c in RATE_STATS}
                     p_prior["OREB"] = p_prior.get("OREB") or 0.25 * p_prior.get("REB", 0)
                     p_prior["TF"] = p_prior.get("TF") or prior["TF"]
-                    p_prior = {c: v * (0.9 if W[c] > 0 else 1.0) for c, v in p_prior.items()}  # same -10% as preseason
+                    p_prior = {c: v * (0.9 if W.get(c, 0) > 0 else 1.0) for c, v in p_prior.items()}  # same -10% as preseason
                     k_min = 600
             rates = {}
             for c in RATE_STATS:
@@ -279,7 +279,7 @@ def build_values(cfg: dict, current: list[dict], logs: pd.DataFrame, ages: dict[
             g_proj = min(float(proj.get("42", 66) or 66), 66)
             cur_gp, cur_fppg = 0, np.nan
             # ESPN rookie lines tend to run hot; shade 10% until real games exist
-            rates = {c: v * (0.9 if W[c] > 0 else 1.0) for c, v in rates.items()}
+            rates = {c: v * (0.9 if W.get(c, 0) > 0 else 1.0) for c, v in rates.items()}
             notes.append("rookie positives shaded -10%")
             last_fppg, last_gp = np.nan, 0
 
@@ -289,9 +289,9 @@ def build_values(cfg: dict, current: list[dict], logs: pd.DataFrame, ages: dict[
         else:
             mpg = float(np.clip(mpg + minutes_age_adj(age), 0, 38))
         af = age_factor(age)
-        fppm = sum(rates[c] * float(W[c]) for c in RATE_STATS) * af
+        fppm = sum(rates[c] * float(W.get(c, 0)) for c in RATE_STATS) * af
         min_scale = float(np.clip(mpg / mpg_hist, 0.6, 1.3)) ** 1.5 if mpg_hist > 0 else 1.0
-        bonus_pg = sum(bonus[c] * float(W[c]) for c in BONUS_STATS) * min_scale
+        bonus_pg = sum(bonus[c] * float(W.get(c, 0)) for c in BONUS_STATS) * min_scale
         fppg = mpg * fppm + bonus_pg
 
         # injuries / suspensions / unsigned
@@ -338,7 +338,7 @@ def build_values(cfg: dict, current: list[dict], logs: pd.DataFrame, ages: dict[
             "fg_pct": round(rates["FGM"] / rates["FGA"], 3) if rates["FGA"] else np.nan,
             "ft_pct": round(rates["FTM"] / rates["FTA"], 3) if rates["FTA"] else np.nan,
             "tov_cost_pg": round(rates["TO"] * mpg * 2, 2),
-            "ft_miss_cost_pg": round(rates["FTMI"] * mpg * 2, 2),
+            "ft_miss_cost_pg": round(rates["FTMI"] * mpg * 1, 2),   # FTA -1 per miss
             "adp": round(adp, 1) if adp == adp else np.nan, "espn_rank": espn_rank,
             "flags": " ".join(flags), "notes": "; ".join(notes), "source": source,
             "outlook": (p.get("seasonOutlook") or "").replace("\n", " "),

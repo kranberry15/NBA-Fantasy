@@ -240,7 +240,7 @@ class Draft:
             strengths.append(f"{r.ast_pg:.1f} AST (={2.5 * r.ast_pg:.0f} pts)")
         if r.fg_pct >= 0.55:
             strengths.append(f"efficient {r.fg_pct:.0%} FG")
-        if r.ft_miss_cost_pg >= 3:
+        if r.ft_miss_cost_pg >= 1.5:
             strengths.append(f"FT misses cost {r.ft_miss_cost_pg:.1f}/g")
         if r.tov_cost_pg >= 7:
             strengths.append(f"TOs cost {r.tov_cost_pg:.1f}/g")

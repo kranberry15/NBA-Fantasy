@@ -35,15 +35,15 @@ trades:
   review_days: 1
   veto_votes: 4
 
-# Exact scoring weights (ESPN stat names). Do not change unless the league changes.
+# Exact scoring weights (ESPN stat names), checked against ESPN's live league settings
+# (python3 check_scoring.py). ESPN does NOT score missed 3s (3PMI) or missed FTs (FTMI) in this
+# league; they were in the original brief but are not in ESPN's settings (fixed 26 Oct 2026).
 scoring:
   FGM: 2
   FGA: -1
   FTM: 1
   FTA: -1
-  FTMI: -1
   3PM: 1
-  3PMI: -1
   OREB: 1
   REB: 1.5
   AST: 2.5
