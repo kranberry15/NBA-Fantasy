@@ -303,7 +303,7 @@ def build_values(cfg: dict, current: list[dict], logs: pd.DataFrame, ages: dict[
             # read ESPN's latest note: a rest / load-management day is not a multi-week injury
             latest = next(iter(_news(pid)), None)
             text = (latest["headline"] + " " + latest["story"]).lower() if latest else ""
-            if any(w in text for w in ("rest", "management", "maintenance", "load")) and not any(
+            if any(w in text for w in ("rest", "management", "maintenance", "load", "back-to-back", "back to back")) and not any(
                     w in text for w in ("surgery", "fracture", "tear", "sprain", "strain", "weeks")):
                 miss = float(pcfg["injury_dtd_games_default"])
                 notes.append(f"OUT for rest/management per ESPN news ({latest['date']}): {miss:.0f} G")
