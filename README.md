@@ -81,7 +81,7 @@ position (convex, star-weighted), and (3) still help me if players miss games at
 
 | | League A | League B |
 |---|---|---|
-| Waivers | FAAB $200, min $1, processed **Sun 09:00 ET (21:00 HKT)**; dropped players wait ≥48 h | Rolling order that **never resets**; a claim sends you last; 1-day waiver period |
+| Waivers | FAAB $200, min $1, processed **daily 09:00 ET (21:00 HKT)** (was Sunday only until 2 Nov); dropped players wait ≥48 h | Rolling order that **never resets**; a claim sends you last; 1-day waiver period |
 | Add limit | none | **7 per 7-day matchup** (scaled to matchup length; any number on one day) |
 | IR | 2 | 1 |
 | Position limit | none | **max 3 centers** (by ESPN primary position) |
@@ -116,7 +116,7 @@ Works:
 * League B week projection and daily lineup (run from Python for now; no command yet)
 
 Not yet / known limits:
-* **No scheduled refresh** yet (`refresh.py` runs by hand). Planned: daily, plus Sunday before League A waivers.
+* **No scheduled refresh** yet (`refresh.py` runs by hand). Planned: daily, before League A waivers (21:00 HKT).
 * `refresh.py` does not re-download the pro schedule; it was fetched once into `data/raw/pro_schedule_2027.json`.
 * No rolling 7/14/30-day form or changelog yet (performance.py covers actual-vs-projected so far).
 * League B trade search and waiver advice are run ad hoc, not from a command.

@@ -138,7 +138,7 @@ def main():
     out += ["## 2. My roster - per-game z-scores (FG%/FT% by volume impact, TO inverted)", "",
             r[cols].round(2).to_markdown(index=False), ""]
 
-    out += ["## 3. Waiver pickups (FAAB 200, min bid 1, runs Sunday 6 AM ET)", "",
+    out += ["## 3. Waiver pickups (FAAB 200, min bid 1, runs daily 9 AM ET / 21:00 HKT)", "",
             "| # | Add | Drop | Gain (cat-wins/wk vs field) | What changes |", "|---|---|---|---|---|"]
     fa = L.fa_moves(me, n=8)
     for i, m in enumerate(fa.itertuples(), 1):
