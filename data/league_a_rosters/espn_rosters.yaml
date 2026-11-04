@@ -1,6 +1,6 @@
 league: league_a
 source: ESPN
-as_of: '2026-11-02'
+as_of: '2026-11-04'
 teams:
   Embiid ur Load:
   - Luka Doncic
@@ -16,12 +16,12 @@ teams:
   - Jaylen Brown
   - Paul George
   - Fred VanVleet
+  - Davion Mitchell
   Okc Champs 2027:
   - Nikola Jokic
   - Jalen Brunson
   - Amen Thompson
   - Derrick White
-  - Naz Reid
   - OG Anunoby
   - Donovan Clingan
   - Chet Holmgren
@@ -31,6 +31,7 @@ teams:
   - Jarrett Allen
   - Ajay Mitchell
   - Onyeka Okongwu
+  - Paul Reed
   Toronto Stars:
   - Victor Wembanyama
   - Anthony Edwards
@@ -77,6 +78,7 @@ teams:
   - Cameron Boozer
   - Desmond Bane
   - Ty Jerome
+  - Jabari Smith Jr.
   Lebron's Tears:
   - Giannis Antetokounmpo
   - Cade Cunningham
@@ -92,20 +94,20 @@ teams:
   - Zach LaVine
   - Jaden McDaniels
 faab_spent:
-  Embiid ur Load: 32
-  Okc Champs 2027: 50
+  Embiid ur Load: 40
+  Okc Champs 2027: 51
   Toronto Stars: 3
   EE SALA CUP NAMDE: 3
-  Abhinav's Awesome Team: 22
+  Abhinav's Awesome Team: 24
   Lebron's Tears: 28
 free_agents:
+- - Naz Reid
+  - WAIVERS
 - - VJ Edgecombe
   - WAIVERS
 - - Ja Morant
   - WAIVERS
 - - Norman Powell
-  - WAIVERS
-- - Jabari Smith Jr.
   - WAIVERS
 - - RJ Barrett
   - WAIVERS
@@ -115,73 +117,71 @@ free_agents:
   - WAIVERS
 - - Miles Bridges
   - WAIVERS
-- - Alex Sarr
+- - Brandin Podziemski
   - WAIVERS
 - - Ausar Thompson
   - WAIVERS
-- - Payton Pritchard
-  - WAIVERS
-- - Brandin Podziemski
+- - Ayo Dosunmu
   - WAIVERS
 - - CJ McCollum
   - WAIVERS
-- - Ayo Dosunmu
+- - Alex Sarr
+  - WAIVERS
+- - Payton Pritchard
   - WAIVERS
 - - Andrew Nembhard
   - WAIVERS
-- - Davion Mitchell
-  - WAIVERS
-- - Matas Buzelis
-  - WAIVERS
 - - Derik Queen
-  - WAIVERS
-- - DeMar DeRozan
-  - WAIVERS
-- - Jalen Green
-  - WAIVERS
-- - Ace Bailey
   - WAIVERS
 - - Brandon Ingram
   - WAIVERS
+- - Jalen Green
+  - WAIVERS
 - - Coby White
   - WAIVERS
-- - Kel'el Ware
+- - Ace Bailey
+  - WAIVERS
+- - Matas Buzelis
+  - WAIVERS
+- - DeMar DeRozan
   - WAIVERS
 - - Darryn Peterson
   - WAIVERS
-- - Jaime Jaquez Jr.
+- - Kel'el Ware
   - WAIVERS
 - - Jonathan Kuminga
+  - WAIVERS
+- - Jaime Jaquez Jr.
   - WAIVERS
 - - John Collins
   - WAIVERS
 - - Reed Sheppard
   - WAIVERS
+- - Moussa Diabate
+  - WAIVERS
+- - Cedric Coward
+  - WAIVERS
 - - Ryan Rollins
   - WAIVERS
 - - Andrew Wiggins
   - WAIVERS
-- - Cedric Coward
+- - Kyshawn George
   - WAIVERS
 - - Jalen Williams
-  - WAIVERS
-- - Moussa Diabate
   - WAIVERS
 - - Aaron Gordon
   - WAIVERS
 - - Zach Edey
   - WAIVERS
-- - Kyshawn George
+- - Jeremiah Fears
   - WAIVERS
 - - Anthony Black
   - WAIVERS
-- - Peyton Watson
-  - WAIVERS
 - - Myles Turner
   - WAIVERS
-- - Jeremiah Fears
-  - WAIVERS
 - - Isaiah Hartenstein
+  - WAIVERS
+- - Peyton Watson
   - WAIVERS
 - - Tobias Harris
   - WAIVERS
@@ -189,303 +189,309 @@ free_agents:
   - WAIVERS
 - - Nic Claxton
   - WAIVERS
+- - Kris Dunn
+  - WAIVERS
+- - Daniel Gafford
+  - WAIVERS
+- - Jrue Holiday
+  - WAIVERS
 - - Toumani Camara
   - WAIVERS
 - - Kristaps Porzingis
   - WAIVERS
-- - Nikola Vucevic
+- - Christian Braun
   - WAIVERS
 - - Devin Vassell
   - WAIVERS
-- - Kris Dunn
+- - Duncan Robinson
+  - WAIVERS
+- - Nikola Vucevic
   - WAIVERS
 - - Kevin Porter Jr.
   - WAIVERS
-- - Jakob Poeltl
-  - WAIVERS
-- - Paul Reed
-  - WAIVERS
-- - Jrue Holiday
-  - WAIVERS
 - - Collin Gillespie
   - WAIVERS
-- - Quentin Grimes
-  - WAIVERS
-- - Keegan Murray
-  - WAIVERS
-- - Daniel Gafford
-  - WAIVERS
-- - Jared McCain
+- - Jakob Poeltl
   - WAIVERS
 - - Dillon Brooks
   - WAIVERS
+- - Keegan Murray
+  - WAIVERS
+- - Quentin Grimes
+  - WAIVERS
 - - Egor Demin
   - WAIVERS
+- - Jared McCain
+  - WAIVERS
 - - Aaron Wiggins
-  - WAIVERS
-- - Christian Braun
-  - WAIVERS
-- - Duncan Robinson
   - WAIVERS
 - - Jimmy Butler III
   - WAIVERS
 - - Precious Achiuwa
   - WAIVERS
+- - P.J. Washington
+  - WAIVERS
 - - Brook Lopez
+  - WAIVERS
+- - Draymond Green
   - WAIVERS
 - - Collin Sexton
   - WAIVERS
-- - P.J. Washington
-  - WAIVERS
 - - Ja'Kobe Walter
-  - WAIVERS
-- - Draymond Green
   - WAIVERS
 - - Neemias Queta
   - WAIVERS
 - - Jalen Smith
   - WAIVERS
-- - Jalen Suggs
-  - WAIVERS
-- - Alex Caruso
-  - WAIVERS
 - - Saddiq Bey
-  - WAIVERS
-- - Bobby Portis
-  - WAIVERS
-- - Grayson Allen
-  - WAIVERS
-- - Keaton Wagler
-  - WAIVERS
-- - Anfernee Simons
   - WAIVERS
 - - Zaccharie Risacher
   - WAIVERS
-- - Jaxson Hayes
+- - Alex Caruso
+  - WAIVERS
+- - Jalen Suggs
+  - WAIVERS
+- - Grayson Allen
+  - WAIVERS
+- - Bobby Portis
+  - WAIVERS
+- - Anfernee Simons
   - WAIVERS
 - - Aday Mara
   - WAIVERS
-- - Rui Hachimura
-  - WAIVERS
-- - Derrick Jones Jr.
-  - WAIVERS
-- - Oso Ighodaro
-  - WAIVERS
-- - Jaylen Wells
-  - WAIVERS
-- - Yves Missi
-  - WAIVERS
-- - Mitchell Robinson
-  - WAIVERS
 - - Tari Eason
+  - WAIVERS
+- - Jaxson Hayes
+  - WAIVERS
+- - Keaton Wagler
   - WAIVERS
 - - Pelle Larsson
   - WAIVERS
-- - Isaiah Jackson
+- - Oso Ighodaro
+  - WAIVERS
+- - Yves Missi
+  - WAIVERS
+- - Rui Hachimura
+  - WAIVERS
+- - Jaylen Wells
+  - WAIVERS
+- - Mitchell Robinson
   - WAIVERS
 - - De'Anthony Melton
+  - WAIVERS
+- - Isaiah Jackson
+  - WAIVERS
+- - Tristan da Silva
+  - WAIVERS
+- - Malik Monk
   - WAIVERS
 - - Obi Toppin
   - WAIVERS
 - - Day'Ron Sharpe
   - WAIVERS
-- - Scotty Pippen Jr.
-  - WAIVERS
-- - Malik Monk
-  - WAIVERS
-- - Kyle Kuzma
+- - Derrick Jones Jr.
   - WAIVERS
 - - Jordan Poole
   - WAIVERS
-- - Terrence Shannon Jr.
-  - WAIVERS
-- - Collin Murray-Boyles
+- - Scotty Pippen Jr.
   - WAIVERS
 - - Naji Marshall
   - WAIVERS
-- - Tristan da Silva
+- - Klay Thompson
+  - WAIVERS
+- - Kyle Kuzma
+  - WAIVERS
+- - Collin Murray-Boyles
   - WAIVERS
 - - Jerami Grant
   - WAIVERS
 - - Deandre Ayton
   - WAIVERS
-- - Andre Drummond
-  - WAIVERS
 - - Keldon Johnson
   - WAIVERS
-- - Klay Thompson
+- - Andre Drummond
+  - WAIVERS
+- - Terrence Shannon Jr.
   - WAIVERS
 - - Bennedict Mathurin
   - WAIVERS
-- - Cason Wallace
-  - WAIVERS
 - - Cameron Johnson
   - WAIVERS
-- - Dennis Schroder
-  - WAIVERS
-- - De'Andre Hunter
+- - Cason Wallace
   - WAIVERS
 - - T.J. McConnell
+  - WAIVERS
+- - De'Andre Hunter
   - WAIVERS
 - - Jake LaRavia
   - WAIVERS
 - - Scoot Henderson
   - WAIVERS
-- - Shaedon Sharpe
+- - Dennis Schroder
   - WAIVERS
 - - Jusuf Nurkic
   - WAIVERS
-- - Mikel Brown Jr.
-  - WAIVERS
-- - Matisse Thybulle
-  - WAIVERS
-- - Mark Williams
-  - WAIVERS
-- - Sandro Mamukelashvili
-  - WAIVERS
-- - Santi Aldama
-  - WAIVERS
-- - Daniss Jenkins
-  - WAIVERS
-- - Bilal Coulibaly
-  - WAIVERS
-- - Robert Williams III
-  - WAIVERS
-- - Kelly Oubre Jr.
-  - WAIVERS
-- - Tre Jones
-  - WAIVERS
-- - Moritz Wagner
-  - WAIVERS
-- - Dereck Lively II
+- - Shaedon Sharpe
   - WAIVERS
 - - Cam Spencer
   - WAIVERS
-- - Khaman Maluach
+- - Mark Williams
+  - WAIVERS
+- - Mikel Brown Jr.
+  - WAIVERS
+- - Santi Aldama
+  - WAIVERS
+- - Sandro Mamukelashvili
+  - WAIVERS
+- - Matisse Thybulle
+  - WAIVERS
+- - Bilal Coulibaly
+  - WAIVERS
+- - Tre Jones
+  - WAIVERS
+- - Daniss Jenkins
+  - WAIVERS
+- - Kelly Oubre Jr.
+  - WAIVERS
+- - Dereck Lively II
+  - WAIVERS
+- - Isaiah Stewart
+  - WAIVERS
+- - Robert Williams III
   - WAIVERS
 - - Cam Thomas
   - WAIVERS
 - - D'Angelo Russell
   - WAIVERS
-- - Kingston Flemings
+- - Khaman Maluach
   - WAIVERS
-- - Kyle Filipowski
+- - Moritz Wagner
+  - WAIVERS
+- - Kingston Flemings
   - WAIVERS
 - - Ziaire Williams
   - WAIVERS
-- - Isaiah Stewart
+- - Kyle Filipowski
   - WAIVERS
-- - Mo Bamba
+- - Meleek Thomas
+  - WAIVERS
+- - Tim Hardaway Jr.
   - WAIVERS
 - - Trevon Brazile
   - WAIVERS
-- - Tim Hardaway Jr.
+- - Mo Bamba
+  - WAIVERS
+- - Karlo Matkovic
+  - WAIVERS
+- - Quenton Jackson
   - WAIVERS
 - - Isaiah Collier
   - WAIVERS
 - - Aaron Nesmith
   - WAIVERS
+- - Nolan Traore
+  - WAIVERS
 - - Morez Johnson Jr.
-  - WAIVERS
-- - Jamal Shead
-  - WAIVERS
-- - Bronny James
-  - WAIVERS
-- - Meleek Thomas
-  - WAIVERS
-- - Sam Hauser
-  - WAIVERS
-- - Kentavious Caldwell-Pope
-  - WAIVERS
-- - Jaylon Tyson
-  - WAIVERS
-- - Quenton Jackson
-  - WAIVERS
-- - Luguentz Dort
-  - WAIVERS
-- - Keon Ellis
-  - WAIVERS
-- - Danny Wolf
   - WAIVERS
 - - Brayden Burries
   - WAIVERS
-- - Jaylin Williams
+- - Bronny James
   - WAIVERS
-- - Nolan Traore
+- - Jamal Shead
   - WAIVERS
-- - Max Christie
+- - Luguentz Dort
   - WAIVERS
-- - Jarace Walker
+- - Sam Hauser
   - WAIVERS
-- - Bub Carrington
+- - Jaylon Tyson
   - WAIVERS
-- - Brandon Williams
+- - Kentavious Caldwell-Pope
   - WAIVERS
-- - Joan Beringer
+- - Danny Wolf
   - WAIVERS
 - - Marcus Smart
   - WAIVERS
-- - Kasparas Jakucionis
+- - Jarace Walker
+  - WAIVERS
+- - Jaylin Williams
+  - WAIVERS
+- - Max Strus
+  - WAIVERS
+- - Keon Ellis
+  - WAIVERS
+- - Max Christie
+  - WAIVERS
+- - Bub Carrington
+  - WAIVERS
+- - Joan Beringer
+  - WAIVERS
+- - Jordan Goodwin
+  - WAIVERS
+- - Bones Hyland
   - WAIVERS
 - - Donte DiVincenzo
+  - WAIVERS
+- - Brandon Williams
   - WAIVERS
 - - Russell Westbrook
   - WAIVERS
 - - Ryan Kalkbrenner
   - WAIVERS
-- - Bones Hyland
-  - WAIVERS
-- - Tre Johnson
-  - WAIVERS
 - - GG Jackson
-  - WAIVERS
-- - Justin Champagnie
   - WAIVERS
 - - Bradley Beal
   - WAIVERS
-- - Brice Sensabaugh
+- - Tre Johnson
+  - WAIVERS
+- - Kasparas Jakucionis
   - WAIVERS
 - - Walter Clayton Jr.
   - WAIVERS
+- - Brice Sensabaugh
+  - WAIVERS
 - - Herbert Jones
+  - WAIVERS
+- - Maxime Raynaud
+  - WAIVERS
+- - Justin Champagnie
   - WAIVERS
 - - Royce O'Neale
   - WAIVERS
 - - Gradey Dick
   - WAIVERS
-- - Jordan Goodwin
-  - WAIVERS
-- - Gui Santos
-  - WAIVERS
-- - Maxime Raynaud
-  - WAIVERS
 - - Chris Paul
-  - WAIVERS
-- - Al Horford
   - WAIVERS
 - - Nikola Jovic
   - WAIVERS
+- - Al Horford
+  - WAIVERS
 - - Kevin Huerter
-  - WAIVERS
-- - Miles McBride
-  - WAIVERS
-- - Jose Alvarado
-  - WAIVERS
-- - Jay Huff
   - WAIVERS
 - - Dean Wade
   - WAIVERS
-- - Sam Merrill
+- - Miles McBride
   - WAIVERS
 - - Luke Kennard
   - WAIVERS
-- - Ben Simmons
+- - Jose Alvarado
+  - WAIVERS
+- - Gui Santos
+  - WAIVERS
+- - Jay Huff
+  - WAIVERS
+- - Kobe Sanders
+  - WAIVERS
+- - Sam Merrill
   - WAIVERS
 - - Isaiah Joe
   - WAIVERS
-- - Carter Bryant
+- - Ben Simmons
   - WAIVERS
 - - Labaron Philon Jr.
+  - WAIVERS
+- - Carter Bryant
+  - WAIVERS
+- - Mario Hezonja
   - WAIVERS
 - - Ronald Holland II
   - WAIVERS
@@ -493,77 +499,71 @@ free_agents:
   - WAIVERS
 - - Luke Kornet
   - WAIVERS
-- - Max Strus
+- - Landry Shamet
   - WAIVERS
 - - Baylor Scheierman
   - WAIVERS
-- - Allen Graves
-  - WAIVERS
-- - Jock Landale
-  - WAIVERS
 - - Javonte Green
-  - WAIVERS
-- - Landry Shamet
-  - WAIVERS
-- - Sidy Cissoko
-  - WAIVERS
-- - Leonard Miller
   - WAIVERS
 - - Nique Clifford
   - WAIVERS
-- - Kobe Sanders
-  - WAIVERS
 - - Hugo Gonzalez
-  - WAIVERS
-- - Clint Capela
-  - WAIVERS
-- - Cameron Carr
   - WAIVERS
 - - AJ Green
   - WAIVERS
 - - Hannes Steinbach
   - WAIVERS
-- - Mario Hezonja
+- - Allen Graves
+  - WAIVERS
+- - Jock Landale
+  - WAIVERS
+- - Cameron Carr
+  - WAIVERS
+- - Leonard Miller
   - WAIVERS
 - - Marvin Bagley III
   - WAIVERS
+- - Harrison Barnes
+  - WAIVERS
 - - Tacko Fall
   - WAIVERS
-- - Harrison Barnes
+- - Clint Capela
+  - WAIVERS
+- - Sidy Cissoko
   - WAIVERS
 - - Cam Whitmore
   - WAIVERS
 - - Sergio de Larrea
   - WAIVERS
-- - Adem Bona
+- - Nate Ament
   - WAIVERS
 - - Buddy Hield
   - WAIVERS
-- - Nate Ament
-  - WAIVERS
-- - Noah Clowney
+- - Adem Bona
   - WAIVERS
 - - Jordan Clarkson
   - WAIVERS
 - - Vit Krejci
   - WAIVERS
-- - Bogdan Bogdanovic
+- - Kenrich Williams
+  - WAIVERS
+- - Noah Clowney
   - WAIVERS
 - - Lonzo Ball
   - WAIVERS
-- - Kenrich Williams
-  - WAIVERS
 - - Ryan Dunn
   - WAIVERS
-- - Karlo Matkovic
+- - Bogdan Bogdanovic
   - WAIVERS
-- - Marcus Sasser
+- - Braden Smith
   - WAIVERS
-- - Khris Middleton
+- - Jase Richardson
+  - WAIVERS
+- - Charles Bassey
   - WAIVERS
 - - Georges Niang
   - WAIVERS
-- - Tyler Kolek
+- - Khris Middleton
   - WAIVERS
 - - Seth Curry
   - WAIVERS
@@ -571,23 +571,23 @@ free_agents:
   - WAIVERS
 - - Yang Hansen
   - WAIVERS
-- - Jase Richardson
-  - WAIVERS
 - - Yanic Konan Niederhauser
   - WAIVERS
+- - Tyler Kolek
+  - WAIVERS
+- - Marcus Sasser
+  - WAIVERS
 - - Rob Dillingham
-  - WAIVERS
-- - Steven Adams
-  - WAIVERS
-- - Ebuka Okorie
-  - WAIVERS
-- - Tyus Jones
   - WAIVERS
 - - Jayden Quaintance
   - WAIVERS
 - - Moses Moody
   - WAIVERS
-- - DeAndre Jordan
+- - Steven Adams
+  - WAIVERS
+- - Tyus Jones
+  - WAIVERS
+- - Ebuka Okorie
   - WAIVERS
 - - Gary Payton II
   - WAIVERS
@@ -595,31 +595,29 @@ free_agents:
   - WAIVERS
 - - Jeremy Sochan
   - WAIVERS
-- - Trayce Jackson-Davis
-  - WAIVERS
 - - Terance Mann
   - WAIVERS
 - - Mike Conley
   - WAIVERS
-- - Svi Mykhailiuk
-  - WAIVERS
 - - Koa Peat
   - WAIVERS
-- - Larry Nance Jr.
+- - Trayce Jackson-Davis
   - WAIVERS
-- - Thanasis Antetokounmpo
+- - DeAndre Jordan
   - WAIVERS
-- - Dalton Knecht
+- - Luka Garza
+  - WAIVERS
+- - Svi Mykhailiuk
   - WAIVERS
 - - Kevon Looney
+  - WAIVERS
+- - Thanasis Antetokounmpo
   - WAIVERS
 - - Chris Cenac Jr.
   - WAIVERS
 - - Trey Lyles
   - WAIVERS
-- - Luka Garza
-  - WAIVERS
-- - Christian Anderson
+- - Dalton Knecht
   - WAIVERS
 - - Tarris Reed Jr.
   - WAIVERS
@@ -627,15 +625,21 @@ free_agents:
   - WAIVERS
 - - Jarred Vanderbilt
   - WAIVERS
-- - Dominick Barlow
+- - Larry Nance Jr.
   - WAIVERS
-- - Goga Bitadze
+- - Christian Anderson
+  - WAIVERS
+- - Dominick Barlow
   - WAIVERS
 - - Isaiah Evans
   - WAIVERS
 - - Dailyn Swain
   - WAIVERS
+- - Dylan Cardwell
+  - WAIVERS
 - - Kyle Anderson
+  - WAIVERS
+- - Goga Bitadze
   - WAIVERS
 - - Corey Kispert
   - WAIVERS
@@ -645,95 +649,113 @@ free_agents:
   - WAIVERS
 - - Gary Trent Jr.
   - WAIVERS
-- - Mohamed Diawara
-  - WAIVERS
 - - Sion James
   - WAIVERS
 - - Jaylen Clark
   - WAIVERS
-- - Simone Fontecchio
-  - WAIVERS
 - - Will Richard
-  - WAIVERS
-- - Isaac Okoro
-  - WAIVERS
-- - Graham Ike
-  - WAIVERS
-- - Chaney Johnson
-  - WAIVERS
-- - Karim Lopez
   - WAIVERS
 - - Noa Essengue
   - WAIVERS
-- - Patrick Williams
+- - Mohamed Diawara
   - WAIVERS
-- - Charles Bassey
+- - Simone Fontecchio
+  - WAIVERS
+- - Jamal Cain
   - WAIVERS
 - - Nikola Topic
+  - WAIVERS
+- - Isaac Okoro
+  - WAIVERS
+- - Karim Lopez
+  - WAIVERS
+- - Patrick Williams
+  - WAIVERS
+- - Grant Williams
   - WAIVERS
 - - Asa Newell
   - WAIVERS
 - - Quinten Post
   - WAIVERS
-- - Dylan Cardwell
-  - WAIVERS
-- - Jamal Cain
-  - WAIVERS
-- - Grant Williams
-  - WAIVERS
 - - Will Riley
   - WAIVERS
-- - Thomas Bryant
+- - Kobe Brown
   - WAIVERS
 - - Zuby Ejiofor
   - WAIVERS
 - - Justin Edwards
   - WAIVERS
-- - Tre Mann
+- - Graham Ike
+  - WAIVERS
+- - Chaney Johnson
   - WAIVERS
 - - Olivier-Maxence Prosper
   - WAIVERS
-- - Kobe Brown
+- - Tyrese Proctor
   - WAIVERS
 - - Johnny Furphy
   - WAIVERS
-- - Jonas Valanciunas
+- - Thomas Bryant
   - WAIVERS
-- - Liam McNeeley
+- - Tre Mann
   - WAIVERS
 - - Jaden Ivey
   - WAIVERS
 - - Pacome Dadiet
   - WAIVERS
+- - Chris Youngblood
+  - WAIVERS
+- - Jonas Valanciunas
+  - WAIVERS
 - - Julian Strawther
   - WAIVERS
-- - Tristan Vukcevic
+- - Leaky Black
+  - WAIVERS
+- - Liam McNeeley
   - WAIVERS
 - - Kyle Lowry
   - WAIVERS
 - - James Wiseman
   - WAIVERS
-- - Caleb Love
-  - WAIVERS
 - - Ben Sheppard
   - WAIVERS
 - - Jalen Wilson
   - WAIVERS
-- - Chris Youngblood
+- - Jamison Battle
   - WAIVERS
-- - Braden Smith
+- - Mouhamed Gueye
+  - WAIVERS
+- - Tristan Vukcevic
+  - WAIVERS
+- - Caleb Martin
+  - WAIVERS
+- - Jabari Walker
+  - WAIVERS
+- - Thomas Sorber
+  - WAIVERS
+- - Tidjane Salaun
+  - WAIVERS
+- - Caleb Love
+  - WAIVERS
+- - Zach Collins
+  - WAIVERS
+- - Jericho Sims
+  - WAIVERS
+- - Nick Richards
+  - WAIVERS
+- - Rayan Rupert
+  - WAIVERS
+- - Jonathan Mogbo
   - WAIVERS
 - - Jaden Hardy
   - WAIVERS
 - - Ousmane Dieng
   - WAIVERS
-- - Mouhamed Gueye
-  - WAIVERS
-- - Leaky Black
-  - WAIVERS
-- - Jabari Walker
+- - Joshua Jefferson
   - WAIVERS
 - - Alex Antetokounmpo
+  - WAIVERS
+- - Rocco Zikarsky
   - WAIVERS
 - - Kris Murray
   - WAIVERS
@@ -741,41 +763,13 @@ free_agents:
   - WAIVERS
 - - Yuki Kawamura
   - WAIVERS
-- - Thomas Sorber
+- - Josh Green
   - WAIVERS
-- - Tidjane Salaun
+- - Jalen Slawson
   - WAIVERS
 - - Kevin Love
   - WAIVERS
-- - Zach Collins
-  - WAIVERS
 - - Jordan McLaughlin
-  - WAIVERS
-- - Jericho Sims
-  - WAIVERS
-- - Josh Minott
-  - WAIVERS
-- - Nick Richards
-  - WAIVERS
-- - Tyrese Proctor
-  - WAIVERS
-- - Jamison Battle
-  - WAIVERS
-- - Rayan Rupert
-  - WAIVERS
-- - Jonathan Mogbo
-  - WAIVERS
-- - Joshua Jefferson
-  - WAIVERS
-- - Caleb Martin
-  - WAIVERS
-- - Rocco Zikarsky
-  - WAIVERS
-- - Josh Green
-  - WAIVERS
-- - Jalen Pickett
-  - WAIVERS
-- - Chris Boucher
   - WAIVERS
 - - Dorian Finney-Smith
   - WAIVERS
@@ -793,15 +787,17 @@ free_agents:
   - WAIVERS
 - - Pat Spencer
   - WAIVERS
+- - Jalen Pickett
+  - WAIVERS
 - - Jalen McDaniels
   - WAIVERS
-- - Ryan Nembhard
+- - Chris Boucher
   - WAIVERS
 - - Wang Zhelin
   - WAIVERS
-- - Trendon Watford
+- - Josh Minott
   - WAIVERS
-- - Jordan Hawkins
+- - Trendon Watford
   - WAIVERS
 - - Jevon Carter
   - WAIVERS
@@ -811,11 +807,13 @@ free_agents:
   - WAIVERS
 - - Jonathan Isaac
   - WAIVERS
-- - Jalen Slawson
-  - WAIVERS
 - - Craig Porter Jr.
   - WAIVERS
+- - Ryan Nembhard
+  - WAIVERS
 - - Guerschon Yabusele
+  - WAIVERS
+- - Dru Smith
   - WAIVERS
 - - Gabe Vincent
   - WAIVERS
@@ -824,6 +822,8 @@ free_agents:
 - - Jordan Miller
   - WAIVERS
 - - Ochai Agbaji
+  - WAIVERS
+- - Jordan Hawkins
   - WAIVERS
 - - Alex Karaban
   - WAIVERS
@@ -837,13 +837,7 @@ free_agents:
   - WAIVERS
 - - Rasheer Fleming
   - WAIVERS
-- - Malcolm Brogdon
-  - WAIVERS
-- - Joe Ingles
-  - WAIVERS
 - - Taylor Hendricks
-  - WAIVERS
-- - Oscar Tshiebwe
   - WAIVERS
 - - Joe Young
   - WAIVERS
@@ -855,17 +849,9 @@ free_agents:
   - WAIVERS
 - - Devin Carter
   - WAIVERS
-- - Moses Wright
-  - WAIVERS
 - - Ben Saraf
   - WAIVERS
-- - Dru Smith
-  - WAIVERS
-- - Koby Brea
-  - WAIVERS
 - - Maliq Brown
-  - WAIVERS
-- - Nigel Hayes-Davis
   - WAIVERS
 - - Rade Zagorac
   - WAIVERS
@@ -877,19 +863,27 @@ free_agents:
   - WAIVERS
 - - Emanuel Sharp
   - WAIVERS
-- - Jaylen Nowell
-  - WAIVERS
 - - Otega Oweh
+  - WAIVERS
+- - Malcolm Brogdon
   - WAIVERS
 - - Patric Young
   - WAIVERS
+- - Joe Ingles
+  - WAIVERS
 - - Spencer Jones
+  - WAIVERS
+- - Oscar Tshiebwe
   - WAIVERS
 - - Jahmir Young
   - WAIVERS
-- - Gary Harris
+- - Moses Wright
   - WAIVERS
 - - Zhou Qi
+  - WAIVERS
+- - Koby Brea
+  - WAIVERS
+- - Nigel Hayes-Davis
   - WAIVERS
 - - Javon Small
   - WAIVERS
@@ -898,4 +892,12 @@ free_agents:
 - - Drake Powell
   - WAIVERS
 - - Kobe Bufkin
+  - WAIVERS
+- - Julian Reese
+  - WAIVERS
+- - Henri Veesaar
+  - WAIVERS
+- - Dwight Powell
+  - WAIVERS
+- - Udonis Haslem
   - WAIVERS
