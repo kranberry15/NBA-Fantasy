@@ -18,6 +18,24 @@ from src import bbref, espn_public, projections
 from src.common import load_league, header
 
 
+def refresh_schedule(season: int, force: bool) -> str:
+    """Re-download ESPN's NBA schedule (used by weekly projections) when older than 7 days."""
+    import json
+    import requests
+    from src.common import RAW
+    path = RAW / f"pro_schedule_{season}.json"
+    if path.exists() and not force and time.time() - path.stat().st_mtime < 7 * 86400:
+        return "cached"
+    try:
+        r = requests.get(f"https://lm-api-reads.fantasy.espn.com/apis/v3/games/fba/seasons/{season}",
+                         params={"view": "proTeamSchedules_wl"}, timeout=30)
+        r.raise_for_status()
+        path.write_text(json.dumps(r.json()))
+        return "updated"
+    except Exception as e:
+        return f"download failed, kept old file ({e})"
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("--force", action="store_true")
@@ -37,6 +55,7 @@ def main(argv=None):
     logs = projections.parse_logs(by_season)
     projections.save_logs_sqlite(logs)
     print(f"Game logs: {len(logs):,} player-games")
+    print(f"Pro schedule: {refresh_schedule(season, args.force)}")
     ages = bbref.ages(season)
     print(f"Ages: {len(ages)} players (Basketball Reference)")
     df = projections.build_values(cfg, current, logs, ages)
