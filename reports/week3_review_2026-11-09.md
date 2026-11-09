@@ -1,7 +1,7 @@
 # Week 3 review (2-8 Nov 2026)
 
 ## Results
-- League A (BLR Dreaming, 9-cat): WON 6-3 vs Lebron's Tears.
+- League A (BLR Dreaming, 9-cat): WON 5-4 vs Lebron's Tears (won FG%, FT%, STL, BLK, TO; lost AST 168-189 on Sunday, REB, 3PM, PTS).
 - League B (Ball Don't Lie, points): LOST 1537.0 - 1811.5 vs D-String (-274.5).
 
 ## League B: where the 274.5 points went
