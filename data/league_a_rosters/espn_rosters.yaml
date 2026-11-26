@@ -191,9 +191,9 @@ free_agents:
   - WAIVERS
 - - Daniss Jenkins
   - WAIVERS
-- - Klay Thompson
-  - WAIVERS
 - - Tobias Harris
+  - WAIVERS
+- - Klay Thompson
   - WAIVERS
 - - Paul Reed
   - WAIVERS
@@ -209,9 +209,9 @@ free_agents:
   - WAIVERS
 - - Brook Lopez
   - WAIVERS
-- - Duncan Robinson
-  - WAIVERS
 - - Kevin Porter Jr.
+  - WAIVERS
+- - Duncan Robinson
   - WAIVERS
 - - Jared McCain
   - WAIVERS
@@ -225,9 +225,9 @@ free_agents:
   - WAIVERS
 - - Dillon Brooks
   - WAIVERS
-- - Kristaps Porzingis
-  - WAIVERS
 - - P.J. Washington
+  - WAIVERS
+- - Kristaps Porzingis
   - WAIVERS
 - - Aaron Wiggins
   - WAIVERS
@@ -259,9 +259,9 @@ free_agents:
   - WAIVERS
 - - Yves Missi
   - WAIVERS
-- - Tari Eason
-  - WAIVERS
 - - Jordan Poole
+  - WAIVERS
+- - Tari Eason
   - WAIVERS
 - - Cameron Johnson
   - WAIVERS
@@ -409,15 +409,15 @@ free_agents:
   - WAIVERS
 - - Khaman Maluach
   - WAIVERS
-- - Max Strus
-  - WAIVERS
 - - Luguentz Dort
+  - WAIVERS
+- - Max Strus
   - WAIVERS
 - - Tim Hardaway Jr.
   - WAIVERS
-- - Kasparas Jakucionis
-  - WAIVERS
 - - Bronny James
+  - WAIVERS
+- - Kasparas Jakucionis
   - WAIVERS
 - - Donte DiVincenzo
   - WAIVERS
@@ -461,9 +461,9 @@ free_agents:
   - WAIVERS
 - - Gradey Dick
   - WAIVERS
-- - Taylor Hendricks
-  - WAIVERS
 - - Royce O'Neale
+  - WAIVERS
+- - Taylor Hendricks
   - WAIVERS
 - - Jaylin Williams
   - WAIVERS
@@ -485,9 +485,9 @@ free_agents:
   - WAIVERS
 - - Jose Alvarado
   - WAIVERS
-- - Luke Kennard
-  - WAIVERS
 - - Sidy Cissoko
+  - WAIVERS
+- - Luke Kennard
   - WAIVERS
 - - Allen Graves
   - WAIVERS
@@ -507,11 +507,11 @@ free_agents:
   - WAIVERS
 - - Justin Champagnie
   - WAIVERS
+- - Christian Anderson
+  - WAIVERS
 - - Javonte Green
   - WAIVERS
 - - Ben Simmons
-  - WAIVERS
-- - Christian Anderson
   - WAIVERS
 - - Keon Ellis
   - WAIVERS
@@ -547,15 +547,15 @@ free_agents:
   - WAIVERS
 - - Jarace Walker
   - WAIVERS
+- - Jalen Slawson
+  - WAIVERS
 - - Hannes Steinbach
   - WAIVERS
 - - Harrison Barnes
   - WAIVERS
-- - Jalen Slawson
+- - Noah Clowney
   - WAIVERS
 - - Ryan Dunn
-  - WAIVERS
-- - Noah Clowney
   - WAIVERS
 - - Jabari Walker
   - WAIVERS
@@ -563,9 +563,9 @@ free_agents:
   - WAIVERS
 - - Jordan Clarkson
   - WAIVERS
-- - Lonzo Ball
-  - WAIVERS
 - - Jay Huff
+  - WAIVERS
+- - Lonzo Ball
   - WAIVERS
 - - Cameron Carr
   - WAIVERS
@@ -619,11 +619,11 @@ free_agents:
   - WAIVERS
 - - Jamison Battle
   - WAIVERS
-- - Leonard Miller
+- - Braden Smith
   - WAIVERS
 - - Tyus Jones
   - WAIVERS
-- - Braden Smith
+- - Leonard Miller
   - WAIVERS
 - - Thomas Bryant
   - WAIVERS
@@ -657,11 +657,11 @@ free_agents:
   - WAIVERS
 - - Kevon Looney
   - WAIVERS
+- - Bol Bol
+  - WAIVERS
 - - Jase Richardson
   - WAIVERS
 - - Cody Williams
-  - WAIVERS
-- - Bol Bol
   - WAIVERS
 - - Olivier-Maxence Prosper
   - WAIVERS
@@ -851,8 +851,6 @@ free_agents:
   - WAIVERS
 - - Rasheer Fleming
   - WAIVERS
-- - Micah Peavy
-  - WAIVERS
 - - Otega Oweh
   - WAIVERS
 - - Malcolm Brogdon
@@ -904,4 +902,6 @@ free_agents:
 - - Boban Marjanovic
   - WAIVERS
 - - Jaylen Nowell
+  - WAIVERS
+- - Micah Peavy
   - WAIVERS
