@@ -31,6 +31,7 @@ def main():
     ap.add_argument("--with", dest="with_", default="")
     ap.add_argument("--team", default="")
     ap.add_argument("--min-fair", type=float, default=-10, help="lowest name-value balance to show (negative = they lose on paper)")
+    ap.add_argument("--realistic", action="store_true", help="only deals where what I get scores <= 110%% of what I give this season (FP/G)")
     args = ap.parse_args()
     cfg = load_league("league_b")
     print(header(cfg))
@@ -83,15 +84,19 @@ def main():
                     fair = nv(g) - nv(q)
                     if gain < 5 or fair < args.min_fair:
                         continue
-                    rows.append((round(gain, 1), round(fair), opp, " + ".join(g), " + ".join(q), ", ".join(cut)))
+                    cur = lambda ns: sum((b.loc[n, "cur_fppg"] if b.loc[n, "cur_fppg"] == b.loc[n, "cur_fppg"] else b.loc[n, "fppg"]) for n in ns)
+                    cg, cq = cur(g), cur(q)
+                    if args.realistic and cq > 1.10 * cg:
+                        continue
+                    rows.append((round(gain, 1), round(fair), opp, " + ".join(g), " + ".join(q), ", ".join(cut), f"{cg:.0f} vs {cq:.0f}"))
     rows.sort(reverse=True)
-    print(f"\n{'gain FP/wk':>10} | {'fair':>5} | team | you give -> you get | you cut")
+    print(f"\n{'gain FP/wk':>10} | {'fair':>5} | FP/G give vs get | team | you give -> you get | you cut")
     seen = {}
     for r in rows:
         if seen.get(r[2], 0) >= 3:
             continue
         seen[r[2]] = seen.get(r[2], 0) + 1
-        print(f"{r[0]:>10} | {r[1]:>5} | {r[2]} | {r[3]} -> {r[4]}" + (f" | cut {r[5]}" if r[5] else ""))
+        print(f"{r[0]:>10} | {r[1]:>5} | {r[6]:>9} | {r[2]} | {r[3]} -> {r[4]}" + (f" | cut {r[5]}" if r[5] else ""))
 
 
 if __name__ == "__main__":
