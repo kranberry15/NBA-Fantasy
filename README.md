@@ -39,6 +39,7 @@ browser ends it.
 | `python3 check_scoring.py` | Compare `league_b.yaml` scoring with ESPN's live league settings (exits 1 on any mismatch) |
 | `python3 league_b_week.py --stream "A,B" --adds 4` | League B: this week's score, projection vs opponent for the days left, and a free-agent streaming plan |
 | `python3 league_a_week.py --claims 2 --drops "A,B" --open 1` | League A: this week's category projection vs opponent, and the waiver claims that flip the most categories |
+| `python3 league_b_trades.py --give "Paul Reed" --with "A,B"` | League B: trades that raise my rest-of-season points and look fair by draft position |
 | `python3 activity.py` | All moves in both leagues incl. cancelled claims (ESPN hides other teams' pending claims) |
 | `python3 league_a.py --sync` | Pull League A rosters + free-agent/waiver list from ESPN, then write `reports/league_a_<date>.md` |
 | `python3 league_a.py` | League A report from the last sync: category ranks, per-player z-scores, waiver adds, trade ideas |
